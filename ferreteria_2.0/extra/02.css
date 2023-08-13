@@ -1,0 +1,108 @@
+/* Resetear estilos por defecto */
+body, h1, h2, h3, ul, li, p, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url(img/interior.jpeg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+#pri {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Menú */
+#menu {
+    background-color: #333;
+    color: white;
+}
+
+.MenInicio {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.MenInicio li {
+    margin: 0 15px;
+}
+
+.MenInicio a {
+    color: white;
+    font-weight: bold;
+}
+
+.MenInicio ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+}
+
+.MenInicio:hover ul {
+    display: block;
+    flex-direction: column;
+}
+
+.MenInicio ul li {
+    margin: 0;
+}
+
+/* Catálogo de Productos */
+.catalogo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.categoria {
+    background-color: #C69749;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 40px);
+    box-sizing: border-box;
+}
+
+.categoria h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.producto {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto a {
+    color: #333;
+    font-weight: bold;
+}
+
+.producto a:hover {
+    color: #ff6600;
+}
