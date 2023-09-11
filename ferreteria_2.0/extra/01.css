@@ -1,32 +1,160 @@
-/* Reiniciamos algunos estilos por defecto */
-body, h1, h2, ul, li, p, form {
+
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 
+.menu{
+    padding-bottom: 80vh;
+}
+.MenInicio{
+    background-color: #252525;
+}
+
 body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #c5c6c7;
     background-image: url(img/home.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#fff;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.container-form{
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
 }
 
-#pri {
-    background: #9e9e9e;
-    font-family: Georgia, Times, serif;
+.welcome-back{
+    display: flex;
+    align-items: center;
     text-align: center;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 10px 10px 0 0;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.message h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: blue;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover {
+    background-color: rgb(23, 23, 112);
+}
+
+.formulario {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: rgb(51, 51, 51, 0.602); 
+    text-align: center;
+}
+
+.create-account{
+    padding: 2.7rem 0;
+    font-size: 1.7rem;
+}
+
+.icons {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.border-icon{
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    background-color: rgb(38, 38, 156);
+    cursor: pointer;
+}
+
+.cuenta-gratis{
+    padding: 2rem 0;
+}
+
+.formulario input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: white thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: white;
+}
+
+.formulario input[type="button"] {
+    width: 60%;
+    margin: auto;
+    border: solid thin white;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+  
+}
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: hidden;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
 }
 
 #menu {
@@ -71,17 +199,6 @@ body {
     display: block;
 }
 
-
-#datos-clientes {
-    height: 60%;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: #C69749;
-    border-radius: 20px;
-    box-shadow: 4 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    position: absolute;
-}
 
 form label {
     display: block;
