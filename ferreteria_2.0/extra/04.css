@@ -61,8 +61,9 @@ body {
 }
 
 .MenInicio ul li {
-    margin: 0;
+    margin: 20px;
 }
+
 /* Contenido de la historia */
 #sec {
     text-align: center;
@@ -90,4 +91,8 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
 }

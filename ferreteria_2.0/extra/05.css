@@ -6,12 +6,6 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Encabezado */
 #pri {
     background-color: #333;
@@ -61,8 +55,31 @@ body {
 }
 
 .MenInicio ul li {
-    margin: 0;
+    margin: 20px;
 }
+
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+/* Información del equipo */
+.yo {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    display:block;
+    align-items: center; 
+}
+
+.yo h4 {
+    color: #333;
+}
+
+.yo h5 {
+    color: #555;
+}
+
 
 /* Contenido de la historia */
 #sec {
@@ -82,24 +99,28 @@ body {
 }
 img {
     float: left; 
-    margin-right: 10px; 
+    margin-right: 20px; 
     width: 100px;
-    height: 100px;}
-
-/* Información del equipo */
-#yo {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    display:grid; 
-    align-items: center; 
+    height: 100px;
 }
 
-#yo h4 {
+
+h4 {
+    margin-top: 10px;
     color: #333;
 }
 
-#yo h5 {
-    color: #555;
+h5 {
+    margin-top: 10px;
+    color: #777;
+}
+
+li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+#yo img {
+    max-width: 100px;
+    border-radius: 30%;
 }

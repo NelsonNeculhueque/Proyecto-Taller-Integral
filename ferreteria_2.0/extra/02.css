@@ -113,3 +113,11 @@ body {
 .producto a:hover {
     color: #ff6600;
 }
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+.MenInicio ul li {
+    margin: 20px;
+}
