@@ -26,16 +26,18 @@ body {
 
 /* Encabezado */
 #pri {
-    text-align: center;
-    padding: 20px;
     background-color: #333;
-    color: white;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
 }
 
 /* Menú */
 #menu {
-    background-color: #333;
+    background-color: #444;
     color: white;
+    padding: 10px 0;
 }
 
 .MenInicio {
@@ -45,12 +47,15 @@ body {
 }
 
 .MenInicio li {
-    margin: 0 15px;
+    margin-right: 20px;
+    list-style: none;
+    position: relative; 
 }
 
 .MenInicio a {
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .MenInicio ul {
@@ -58,9 +63,11 @@ body {
     position: absolute;
     background-color: #333;
     z-index: 1;
+    top: 100%; 
+    left: 0; 
 }
 
-.MenInicio:hover ul {
+.MenInicio li:hover ul {
     display: block;
     flex-direction: column;
 }
@@ -112,6 +119,7 @@ body {
     color: #ff6600;
 }
 
+<<<<<<< HEAD
 .carousel {
     width: 100%;
     margin: 0px 0px;
@@ -232,3 +240,12 @@ body {
 .carrusel-next{
     right: 0px;
 }
+=======
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+.MenInicio ul li {
+    margin: 20px;
+}
+>>>>>>> cbc9cb716d45d67a69ff3a17231e46acf676e97e

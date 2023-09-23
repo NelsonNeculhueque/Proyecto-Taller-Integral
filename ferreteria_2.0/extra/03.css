@@ -84,3 +84,12 @@ h1 {
 .form-group button:hover {
     background-color: #0056b3;
 }
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+.MenInicio ul li {
+    margin: 20px;
+}
+
