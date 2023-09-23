@@ -40,9 +40,13 @@ VALUES (001, 'Cadena_28_Dientes', 100, $$$$),
  (008, 'Aceite_Mezcla_Husqvarna_HP_4LT', 100, $$$$);
 
 INSERT INTO ImplementoSeg (ID_Implemento, Tipo_Implemento, Talla, Stock, Precio)
-VALUES (001, ' ', 'M', 30, $$$$),
- (002, ' ', 'L', 50, $$$$),
- (003, ' ', 'XL', 20, $$$$);
+VALUES (001, 'Guantes de protección', 'M', 30, $$$$),
+ (002, 'Casco de seguridad', 'N/A', 50, $$$$),
+ (003, 'Gafas de seguridad', 'N/A', 20, $$$$);
+ (004, 'Botas con punta de acero', '40', 50, $$$$),
+ (005, 'Equipos de protección auditiva', 'XL', 20, $$$$);
+ (006, 'perneras de kevlar', 'L', 50, $$$$),
+ 
 INSERT INTO MaquinariaMotor (ID_Maquinaria, Tipo_Maquinaria, Modelo, Stock, Precio)
 VALUES (1, 'Motosierra_Residencial', 'Husqvarna 120 ', 100, $$$$),
  (002, 'Motosierra_Residencial', 'Husqvarna 236', 100, $$$$),
