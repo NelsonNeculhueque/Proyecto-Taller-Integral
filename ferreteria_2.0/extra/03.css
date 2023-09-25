@@ -1,88 +1,249 @@
-body {
-    display: block;
-    background-image: url(img/ferreteria\ completa.jpg);
-    background-size: cover;
-    font-family: Arial, sans-serif;
+@import 'reset/mixins';
+
+
+body, h1, h2, h3, ul, li, p, a {
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.cont {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-.cont a {
-    
+    list-style: none;
     text-decoration: none;
-    color: #325c89;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url(img/interior.jpeg);
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+
 }
 
 .container {
-    max-width: 400px;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: rgba(186, 174, 174, 0.76);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: black;
 }
 
-.container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form-group textarea {
-    height: 150px;
-}
-
-.form-group button {
-    background-color: #007bff;
+/* Encabezado */
+#pri {
+    background-color: #333;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+/* Menú */
+#menu {
+    background-color: #444;
+    color: white;
+    padding: 10px 0;
+}
+
+.MenInicio {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.MenInicio li {
+    margin-right: 20px;
+    list-style: none;
+    position: relative; 
+}
+
+.MenInicio a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.MenInicio ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    top: 100%; 
+    left: 0; 
+}
+
+.MenInicio li:hover ul {
+    display: block;
+    flex-direction: column;
+}
+
+.MenInicio ul li {
+    margin: 0;
+}
+
+/* Catálogo de Productos */
+.catalogo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.categoria {
+    background-color: #C69749;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 40px);
+    box-sizing: border-box;
+}
+
+.categoria h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.producto {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto a {
+    color: #333;
+    font-weight: bold;
+}
+
+.producto a:hover {
+    color: #ff6600;
+}
+
+<<<<<<< HEAD
+.carousel {
+    
+    width: 100%;
+    margin: 0px 0px;
+
+}
+
+@media(min-width:768px){
+    .carousel{
+        margin: 0px 60px;
+
+    }
+}
+
+.carousel h2{
+    font-size: 45px;
+    line-height: 38px;
+    padding-bottom: 50px;
+    opacity: .9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+.carrusel-list{
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 304px;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 50vw;
+    overflow: hidden;
+}
+
+.carrusel-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+.carrusel{
+    
+    margin: auto;
+    position: relative;
+    width: 210px;
+    padding: 0 18px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+
+.carrusel h4{
+
+    position: absolute;
+    z-index: 1;
+    font-size: 22;
+    line-height: 23px;
+    color: white;
+    padding: 15px;
+
+}
+
+.carrusel h4 small {
+    font-size: 15px;
+    display: block;
+}
+
+.carrusel a img{  
+    background-color: #333;
+    object-fit: cover;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0);
+    transition: .3s;
+}
+
+@media(min-width:768px){
+    .carrusel{
+        width: 275px;
+    }
+
+    .carrusel a img{
+        width: 250px;
+    }
+}
+
+.carrusel-arrow{
+    border-radius: 30px;
+    background-color: black;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border: 0;
     cursor: pointer;
 }
 
-.form-group button:hover {
-    background-color: #0056b3;
+.carrusel-arrow:focus{
+    outline: 0;
+}
+
+.carrusel-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.carrusel-prev{
+    left: 0px;
+
+}
+
+.carrusel-next{
+    right: 0px;
 }
 
 .MenInicio a:hover {
@@ -92,4 +253,3 @@ h1 {
 .MenInicio ul li {
     margin: 20px;
 }
-
