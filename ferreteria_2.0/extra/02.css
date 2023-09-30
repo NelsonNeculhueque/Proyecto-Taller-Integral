@@ -328,3 +328,34 @@ body {
     z-index: 7;
     display: none;
 }
+
+#icon-menu{
+    display: flex;
+    right: 60px;
+}
+
+@media screen and (max-width: 1220px){
+    .header-content,
+    .container-footer footer{
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+    #ctn-bars-search
+    #ctn-bars-search input,
+    #box-search{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    .container-aside{
+        flex-wrap: wrap;
+    }
+
+    .icon-menu{
+        right: 20px;
+    }
+    
+}
