@@ -53,3 +53,23 @@ function buscador_interno(){
         }
     }
 }
+// Realizar una solicitud AJAX para obtener los nombres de las tablas desde PHP
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+
+        var nombresTablas = JSON.parse(xhr.responseText);
+        
+        console.log(nombresTablas);
+        
+        var boxSearch = document.getElementById("box-search");
+        nombresTablas.forEach(function (nombreTabla) {
+            var listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="#">${nombreTabla}</a>`;
+            boxSearch.appendChild(listItem);
+        });
+    }
+};
+
+xhr.open('GET', 'bsd.php', true); 
+xhr.send();
