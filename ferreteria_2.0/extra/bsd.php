@@ -1,13 +1,13 @@
 <?php
 // Conéctate a la base de datos
-$conexion = mysqli_connect("localhost", "nelson", "Nelson_2005", "ferreteriavirtual");
+$conexion = mysqli_connect("localhost", "nelson", "Nelson_2005", "FerreteriaVirtual");
 
 if (!$conexion) {
     die("La conexión falló: " . mysqli_connect_error());
 }
 
 // Consulta SQL para obtener los nombres de los productos de 'maquinariamotor'
-$consulta_maquinariamotor = "SELECT Tipo_Maquinaria FROM maquinariamotor";
+$consulta_maquinariamotor = "SELECT Tipo_Maquinaria, Modelo FROM maquinariamotor";
 $resultado_maquinariamotor = mysqli_query($conexion, $consulta_maquinariamotor);
 
 if (!$resultado_maquinariamotor) {
@@ -30,32 +30,25 @@ if (!$resultado_implementoseg) {
     die("La consulta de 'implementoseg' falló: " . mysqli_error($conexion));
 }
 
-// Crear arreglos para almacenar los nombres de los productos de cada tabla
-$nombres_maquinariamotor = array();
-$nombres_suplementos = array();
-$nombres_implementoseg = array();
+// Crear un arreglo para almacenar todos los nombres de productos
+$nombres_productos = array();
 
 while ($fila = mysqli_fetch_assoc($resultado_maquinariamotor)) {
-    $nombres_maquinariamotor[] = $fila['nombre'];
+
+    $nombre_completo = $fila['Tipo_Maquinaria'] . ' ' . $fila['Modelo'];
+    $nombres_productos[] = $nombre_completo;
 }
 
 while ($fila = mysqli_fetch_assoc($resultado_suplementos)) {
-    $nombres_suplementos[] = $fila['nombre'];
+    $nombres_productos[] = $fila['Nombre_Suple'];
 }
 
 while ($fila = mysqli_fetch_assoc($resultado_implementoseg)) {
-    $nombres_implementoseg[] = $fila['nombre'];
+    $nombres_productos[] = $fila['Tipo_Implemento'];
 }
 
 // Cierra la conexión a la base de datos
 mysqli_close($conexion);
-
-// Almacena los nombres de los productos en un arreglo asociativo
-$nombres_productos = array(
-    'maquinariamotor' => $nombres_maquinariamotor,
-    'suplementos' => $nombres_suplementos,
-    'implementoseg' => $nombres_implementoseg
-);
 
 // Imprime los nombres de los productos como una respuesta JSON
 header('Content-Type: application/json');
