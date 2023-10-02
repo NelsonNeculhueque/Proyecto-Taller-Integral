@@ -87,4 +87,4 @@ VALUES
  (034, 'Motocultivador_Agricola ', 'Husqvarna TR530 ', 100, 1404210),
  (035, 'Cortacesped_Residencial ', 'Husqvarna LC140 ', 100, 315990),
  (036, 'Cortacesped_Residencial', 'Husqvarna LC153', 100, 450000),
- (037, 'Cortacesped_Residencial', 'Husqvarna HU725AWDH', 100, 698180),
+ (037, 'Cortacesped_Residencial', 'Husqvarna HU725AWDH', 100, 698180);
