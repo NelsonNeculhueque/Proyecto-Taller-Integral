@@ -7,7 +7,7 @@ if (!$conexion) {
 }
 
 // Consulta SQL para obtener los nombres de los productos de 'maquinariamotor'
-$consulta_maquinariamotor = "SELECT nombre FROM maquinariamotor";
+$consulta_maquinariamotor = "SELECT Tipo_Maquinaria FROM maquinariamotor";
 $resultado_maquinariamotor = mysqli_query($conexion, $consulta_maquinariamotor);
 
 if (!$resultado_maquinariamotor) {
@@ -15,7 +15,7 @@ if (!$resultado_maquinariamotor) {
 }
 
 // Consulta SQL para obtener los nombres de los productos de 'suplementos'
-$consulta_suplementos = "SELECT nombre FROM suplementos";
+$consulta_suplementos = "SELECT Nombre_Suple FROM suplementos";
 $resultado_suplementos = mysqli_query($conexion, $consulta_suplementos);
 
 if (!$resultado_suplementos) {
@@ -23,7 +23,7 @@ if (!$resultado_suplementos) {
 }
 
 // Consulta SQL para obtener los nombres de los productos de 'implementoseg'
-$consulta_implementoseg = "SELECT nombre FROM implementoseg";
+$consulta_implementoseg = "SELECT Tipo_Implemento FROM implementoseg";
 $resultado_implementoseg = mysqli_query($conexion, $consulta_implementoseg);
 
 if (!$resultado_implementoseg) {
