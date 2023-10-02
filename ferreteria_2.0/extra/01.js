@@ -56,20 +56,28 @@ function buscador_interno(){
 // Realizar una solicitud AJAX para obtener los nombres de las tablas desde PHP
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        var nombresTablas = JSON.parse(xhr.responseText);
-        var boxSearch = document.getElementById("box-search");
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            var nombresTablas = JSON.parse(xhr.responseText);
+            var boxSearch = document.getElementById("box-search");
 
-        // Limpia el cuadro de búsqueda antes de agregar los nombres de las tablas
-        boxSearch.innerHTML = "";
+            // Limpia el cuadro de búsqueda antes de agregar los nombres de las tablas
+            boxSearch.innerHTML = "";
 
-        nombresTablas.forEach(function (nombreTabla) {
-            var listItem = document.createElement("li");
-            listItem.innerHTML = `<a href="#">${nombreTabla}</a>`;
-            boxSearch.appendChild(listItem);
-        });
+            nombresTablas.forEach(function (nombres_productos) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = `<a href="#">${nombres_productos}</a>`;
+                boxSearch.appendChild(listItem);
+            });
+
+            boxSearch.style.display = "block"; // Mostrar el cuadro de búsqueda
+        } else {
+            console.error("Error en la solicitud AJAX: " + xhr.status);
+        }
     }
 };
+
+// Configurar y enviar la solicitud AJAX al archivo PHP
 
 xhr.open('GET', 'bsd.php', true); 
 xhr.send();

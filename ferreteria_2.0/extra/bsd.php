@@ -1,6 +1,6 @@
 <?php
 // Conéctate a la base de datos
-$conexion = mysqli_connect("localhost", "nelson", "Nelson_2005", "ferreteria virtual");
+$conexion = mysqli_connect("localhost", "nelson", "Nelson_2005", "ferreteriavirtual");
 
 if (!$conexion) {
     die("La conexión falló: " . mysqli_connect_error());
