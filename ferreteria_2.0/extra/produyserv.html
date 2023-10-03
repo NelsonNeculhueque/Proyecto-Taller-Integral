@@ -6,99 +6,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos y Servicios</title>
+    <meta name="robots" content="noindex">
     <link rel="stylesheet" href="02.css">
     <script defer src="01.js"></script>
+
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
-<header>
-<div class="header-content">
-    <h1 id="pri">Ferretería Bertuzzi</h1>
 
-    <div id="menu">
-        <ul class="MenInicio">
-            <li> <a href="home.html">Home</a></li>
-            <li> <a href="produyserv.html">Productos y Servicios</a></li>
-            <li> <a href="contacto.html">Contacto</a></li>
-            <li>
-                <a href="quienessomos.html">Quienes somos</a>
-            </li>
-            <div id="ctn-icon-search">
-                <i class="fas fa-search" id="icon-search"></i>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="pri">Ferretería Bertuzzi</h1>
+        
+            <div id="menu">
+                <ul class="MenInicio">
+                    <li> <a href="home.html">Home</a></li>
+                    <li> <a href="produyserv.html">Productos y Servicios</a></li>
+                    <li> <a href="contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="quienessomos.html">Quienes somos</a>
+                    </li>
+                    <div id="ctn-icon-search">
+                        <i class="fas fa-search" id="icon-search"></i>
+                    </div>
+                    <div id="icon-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </ul>
             </div>
-            <div id="icon-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </ul>
-    </div>
-</div>
-</header>
-<div id="ctn-bars-search">
-    <input type="text" id="inputSearch" placeholder="Que desea Buscar?">
-</div>
+        
+        <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="Que desea Buscar?">
+        </div>
+        </div>
+        </header>
+ 
 
+
+    
+
+    <main>
+        
 <ul id="box-search"></ul>
 
 <div id="cover-ctn-search"> </div>
-<body>
-<br>
-    <h2>Catálogo de Productos</h2>
+
 
     <div class="catalogo">
         <div class="categoria">
-            <h3>Implementos de Seguridad</h3>
-            <div class="producto">
-                <a href="--">
-                    <img alt="Implemento de Seguridad 1" height="200" src="img/165037-800-auto.png" /><br>
-                    Zapatos de Seguridad<br>
-                    $$$$$$
-                </a>
-            </div>
-            <div class="producto">
-                <a href="--">
-                    <img alt="Implemento de Seguridad 2" height="200" src="img/2002509.png" /><br>
-                    Antiparras de Seguridad<br>
-                    $$$$$$
-                </a>
-            </div>
-            <!-- Agrega más productos de esta categoría si es necesario -->
+            <tr>      
+                <td><h3>Seguridad</h3><br><a href="--">
+                    <img alt="Cambiar imagen" height="200"
+                    onmouseout= "SacaImagen1(this)"
+                    onmouseover="MeteImagen1(this)"
+                    src="https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png" id="vacio" /> <br>
+                    </a>
+                </td>
+            </tr>
         </div>
-
         <div class="categoria">
-            <h3>Suplementos</h3>
-            <div class="producto">
-                <a href="--">
-                    <img alt="Suplemento 1" height="200" src="img/Aceite-Mezcla_500cc.jpg" /><br>
-                    Aceite Mezcla 500cc<br>
-                    $$$$$$
-                </a>
-            </div>
-            <div class="producto">
-                <a href="--">
-                    <img alt="Suplemento 2" height="200" src="img/images.jpeg" /><br>
-                    Cadena Motosierra<br>
-                    $$$$$$
-                </a>
-            </div>
-            <!-- Agrega más productos de esta categoría si es necesario -->
-        </div>
-
+            <tr>    
+                <td><h3>Maquinas</h3><br><a href="--">
+                    <img alt="Cambiar imagen" height="200"
+                    onmouseout= "SacaImagen(this)"
+                    onmouseover="MeteImagen2(this)"
+                    src="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL" id="vacio1" /> <br>
+                    </a>
+                </td> 
+            </tr>
+        </div> 
         <div class="categoria">
-            <h3>Maquinaria Motor</h3>
-            <div class="producto">
-                <a href="--">
-                    <img alt="Maquinaria Motor 1" height="200" src="img/Motosierra-Ms-361-Espada-20-Stihl.png" /><br>
-                    Motosierra MS 361<br>
-                    $$$$$$
-                </a>
-            </div>
-            <div class="producto">
-                <a href="--">
-                    <img alt="Maquinaria Motor 2" height="200" src="img/UMK450_HONDA_2019.jpg" /><br>
-                    Desbrozadora HONDA UMK45O<br>
-                    $$$$$$
-                </a>
-            </div>
+            <tr>
+                <td><h3>Suplementos</h3><br><a href="--">
+                    <img alt="Cambiar imagen" height="200"
+                    onmouseout= "SacaImagen3(this)"
+                    onmouseover="MeteImagen2(this)"
+                    src="img/Aceite-Mezcla_500cc.jpg" id="vacio2" /> <br>
+                    </a>
+                </td> 
+            </tr>
         </div>
+        
     </div>
     
     <div class="carousel">
@@ -327,7 +315,15 @@
 
 
     <script src="JS/02.js" ></script>
+    </main>
+
+    <footer>
+        <!-- Añadimos un pie de página con la etiqueta <footer> -->
+        <p>Ferretería Bertuzzi SPA - Todos los derechos reservados © 2023</p>
+    </footer>
+
 </body>
+
 
 </html>
 

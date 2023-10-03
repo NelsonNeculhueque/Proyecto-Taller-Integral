@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /css/
+Disallow: /img/
+Disallow: /src/
+Allow: /index.html
+Allow: /contactos.html
+Allow: /productos.html
+Allow: /quienes_somos.html

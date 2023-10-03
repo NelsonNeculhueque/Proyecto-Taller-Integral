@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <title>Proyecto</title>
+     <title>Ferretería Bertuzzi</title>
      <meta charset="UTF-8"> 
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link href="01.css" rel="stylesheet"> 
+     <meta name="robots" content="noindex">
      <link rel="stylesheet" href="extra/01.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
      <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+     <script src="01.js"></script>
     
-
-  <div class="menu"> 
-    <h1 id="pri">Ferretería Bertuzzi</h1> 
-     <ul class="MenInicio"> 
-         <li> <a href="home.html">Home</a></li>
-         <li> <a href="produyserv.html">Productos y Servicios</a></li>    
-         <li> <a href="contacto.html">Contacto</a></li>
-          <li> <a href="quienessomos.html">Quienes somos</a>
-    <ul>
-
-  </div>
 </head>
 
-<body>
+
+<!-- ____________________hola__________________________ -->
+<body>           
+    <header>
+                    <h1 id="pri">Ferretería Bertuzzi</h1>
+                
+                    <div id="menu">
+                        <ul class="MenInicio">
+                            <li> <a href="home.html">Home</a></li>
+                            <li> <a href="produyserv.html">Productos y Servicios</a></li>
+                            <li> <a href="contacto.html">Contacto</a></li>
+                            <li> <a href="quienessomos.html">Quienes somos</a>
+                            </li>
+                        </ul>
+                    </div>
+    </header>
+    
+    <main>
+    
         <div class="container-form sign-up">
             <div class="welcome-back">
                 <div class="message">
@@ -48,6 +57,7 @@
                     </div>
                     </a>
                 </div>
+                <div class="cuentaN">
                 <p class="cuenta-gratis">Ingrese sus datos para mejorar nuestra atencion</p>
                 <input type="text" placeholder="rut">
                 <input type="text" placeholder="nombre">
@@ -55,9 +65,10 @@
                 <input type="email" placeholder="correo">
                 <input type="text" placeholder="direccion">
                 <input type="button" value="Registrarse">
+                </div>
             </form>
         </div>
-        <div class="container-form sign-in">
+        <div class="sign-in">
             <form class="formulario">
                 <h2 class="sign-up-btn">Iniciar Sesion</h2>
                 <div class="iconos">
@@ -72,7 +83,7 @@
                     </div>
                     </a>
                 </div>
-                <p class="cuenta-gratis">Aun no tiene una cuenta?</p>
+                <p class="cuenta-gratis"></p>
                 <input type="text" placeholder="rut">
                 <input type="email" placeholder="correo">
                 <input type="button" placeholder="Iniciar Sesion">
@@ -85,10 +96,15 @@
                 </div>
             </div>
         </div>
-        <script src="01.js"></script>
-    </form>
     <br>
     <button onclick="vaciarCasillas()">Vaciar Casillas</button>
+
+    </main>
+
+    <footer>
+        <!-- Añadimos un pie de página con la etiqueta <footer> -->
+        <p>Ferretería Bertuzzi SPA - Todos los derechos reservados © 2023</p>
+    </footer>
 
 </body>
         

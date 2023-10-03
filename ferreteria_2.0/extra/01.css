@@ -1,30 +1,113 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-.menu {
-    padding-bottom: 80vh;
-}
-
+/* Estilos generales aaaaaaaaaaaa*/
 
 body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #c5c6c7;
+    font-family: Arial, sans-serif;
     background-image: url(img/home.jpeg);
+    margin: auto;
+    padding: 0;
+    background-color: #f0f0f0;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+main{
+    width: 70%;
+    margin: auto;
+
+}
+/* Encabezado */
+#pri {
+    background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
 }
 
-.container-form {
+/* Menú */
+#menu {
+    background-color: #444;
+    color: white;
+    padding: 2px 0;
+}
+
+.MenInicio {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.MenInicio li {
+    margin-right: 20px;
+    list-style: none;
+    position: relative;
+}
+
+.MenInicio a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.MenInicio ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.MenInicio li:hover ul {
+    display: block;
+    flex-direction: column;
+}
+
+.MenInicio ul li {
+    margin: 20px;
+}
+
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+#historia{
     width: 90%;
-    height: 90vh;
+    max-width: 1000px;
+}
+
+#articulos{
+    /*margin-top:10cm;*/
+    text-align: center;
+    margin-bottom: 50px;   
+    width: 50px;
+}
+
+#articulos td{
+    border: 5px solid black;
+    background-color: rgb(103, 179, 255);
+    text-decoration: none;
+}
+
+#articulos td a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-form {
     display: flex;
     justify-content: space-around;
     transition: all .5s ease-out;
@@ -37,12 +120,16 @@ body {
 }
 
 .message {
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 15px;
     padding: 1rem;
+    color: #fff;
 }
 
 .message h2 {
     font-size: 1.7rem;
     padding: 1rem 0;
+    color: #fff;
 }
 
 .message button {
@@ -63,13 +150,8 @@ body {
     background-color: rgb(23, 23, 112);
 }
 
-.formulario {
-    width: 400px;
-    padding: 1rem;
-    margin: 2rem;
-    background-color: rgba(51, 51, 51, 0.602);
-    text-align: center;
-}
+
+
 
 .create-account {
     padding: 2.7rem 0;
@@ -105,11 +187,27 @@ body {
     padding: 2rem 0;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centrar elementos horizontalmente */
+}
+
+.formulario {
+    border-radius: 15px;
+    color: #fff;
+    padding: 1rem;
+    margin: 2rem auto; /* Centrar el formulario horizontalmente */
+    max-width: 400px; /* Especificar un ancho máximo */
+    background-color: rgba(51, 51, 51, 0.89);
+}
+
 .formulario input {
     width: 70%;
     display: block;
     margin: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Agregar margen inferior */
     background-color: transparent;
     border: none;
     border-bottom: white thin solid;
@@ -119,7 +217,6 @@ body {
     font-size: .9rem;
     color: white;
 }
-
 .formulario input[type="button"] {
     width: 60%;
     margin: auto;
@@ -149,64 +246,14 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-
-#menu {
-    background-color: #444;
-    border-radius: 10px;
-    margin-top: 15px;
-    overflow: hidden;
-}
-
-.MenInicio {
-    background-color:#444;
+.container-form {
     display: flex;
-    justify-content: center;
-    padding: 15px 0;
-}
-
-.MenInicio li {
-    margin-right: 50px;
-    list-style: none;
-    position: relative;
-    
-}
-
-.MenInicio a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.MenInicio ul {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    z-index: 1;
-    top: 100%;
-    left: 0;
-}
-
-.MenInicio li:hover ul {
-    display: block;
-    flex-direction: column;
-}
-
-.MenInicio ul li {
-    margin: 20px;
-}
-
-
-.MenInicio a:hover {
-    color: #ff6600; /* Cambio de color al pasar el mouse */
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+    margin: 0 auto; /* Centrar horizontalmente el formulario */
 }
 
 form input[type="text"] {
-    width: 30%;
     padding: 8px;
     margin-bottom: 5px;
     border: 1px solid #ccc;
@@ -214,29 +261,3 @@ form input[type="text"] {
     transition: border-color 0.3s;
 }
 
-form input[type="text"]:focus {
-    border-color: #4d90fe;
-    outline: none;
-}
-
-form input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-#pri {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
-    margin: 0;
-}

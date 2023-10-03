@@ -6,12 +6,6 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Encabezado */
 #pri {
     background-color: #333;
@@ -51,18 +45,53 @@ body {
     position: absolute;
     background-color: #333;
     z-index: 1;
-    top: 100%; 
-    left: 0; 
+    top: 100%;
+    left: 0;
 }
 
 .MenInicio li:hover ul {
-    display: block; 
+    display: block;
     flex-direction: column;
 }
 
 .MenInicio ul li {
     margin: 20px;
 }
+
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+footer{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Información del equipo */
+.yo {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    display:block;
+    align-items: center; 
+}
+
+.yo h4 {
+    color: #333;
+}
+
+.yo h5 {
+    color: #555;
+}
+
 
 /* Contenido de la historia */
 #sec {
@@ -77,22 +106,28 @@ body {
 }
 
 #historia img {
-    float: right;
-    margin-left: 20px;
-    max-width: 200px;
-    height: auto;
+    float: left; 
+    margin-right: 20px; 
+}
+img {
+    float: left; 
+    margin-right: 20px; 
+    width: 100px;
+    height: 100px;
 }
 
-/* Enlaces globales */
-a {
-    color: #0078d4;
-    text-decoration: none;
+
+h4 {
+    margin-top: 10px;
+    color: #333;
 }
 
-a:hover {
-    text-decoration: underline;
+h5 {
+    margin-top: 10px;
+    color: #777;
 }
 
-.MenInicio a:hover {
-    color: #ff6600; /* Cambio de color al pasar el mouse */
+#yo img {
+    max-width: 100px;
+    border-radius: 30%;
 }
