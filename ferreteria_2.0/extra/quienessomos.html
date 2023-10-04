@@ -4,12 +4,13 @@
      <title>Historia</title>
      <meta charset="UTF-8"> 
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="04.css">
-     <link href="05.css" rel="stylesheet">
-     
+     <link href="04.css" rel="stylesheet">
+     <meta name="robots" content="noindex">
+     <script defer src="01.js"></script>
  </head>
 
  <body>
+    <header>
     <h1 id="pri">Ferretería Bertuzzi</h1>
 
     <div id="menu">
@@ -21,7 +22,9 @@
             </li>
         </ul>
     </div>
-
+    </header>
+    
+    <main>
     <h1 id="sec">Todo empezó con...</h1>
 
     <p id="historia">
@@ -35,7 +38,10 @@
     </p>
     <h2 id ="sec">Equipo</h2>
     <div class="yo">
-        <img src="imagen_gianluca.jpg" alt="Foto de Gianluca">
+        <img alt="Cambiar imagen" height="200"
+        onmouseout= "SacaImagen2(this)"
+        onmouseover="MeteImagen2(this)"
+        src="img/numero-1.jpg" id="vacio" />
         <h4>Gianluca Alesandro Bertuzzi Toro</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -44,9 +50,12 @@
             <li>RUT. 20.617.914-7</li>
         </h5>
     </div>
-    
+
     <div class="yo">
-        <img  src="icono.png" alt="Foto de Nelson">
+        <img alt="Cambiar imagen" height="200"
+        onmouseout= "SacaImagen2(this)"
+        onmouseover="MeteImagen2(this)"
+        src="img/numero-1.jpg" id="vacio1" />
         <h4>Nelson Abner Neculhueque Sepulveda</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -56,7 +65,10 @@
         </h5>
     </div>
     <div class="yo">
-        <img src="imagen_debora.jpg" alt="Foto de Debora">
+        <img alt="Cambiar imagen" height="200"
+        onmouseout= "SacaImagen2(this)"
+        onmouseover="MeteImagen2(this)"
+        src="img/numero-1.jpg" id="vacio2" />
         <h4>Débora Camila Vizama Infante</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -67,7 +79,10 @@
     </div>
     
     <div class="yo">
-        <img src="imagen_javier.jpg" alt="Foto de Javier">
+        <img alt="Cambiar imagen" height="200"
+        onmouseout= "SacaImagen2(this)"
+        onmouseover="MeteImagen2(this)"
+        src="img/numero-1.jpg" id="vacio3" />
         <h4>Javier</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -78,7 +93,10 @@
     </div>
     
     <div class="yo">
-        <img src="imagen_abdiel.jpg" alt="Foto de Abdiel">
+        <img alt="Cambiar imagen" height="200"
+        onmouseout= "SacaImagen2(this)"
+        onmouseover="MeteImagen2(this)"
+        src="img/numero-1.jpg" id="vacio4" />
         <h4>Abdiel Antonio Molina Cifuentes</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -87,6 +105,11 @@
             <li>RUT. 21.641.482-9</li>
         </h5>
     </div>
+    </main>
+    <footer>
+        <!-- Añadimos un pie de página con la etiqueta <footer> -->
+        <p>Ferretería Bertuzzi SPA - Todos los derechos reservados © 2023</p>
+    </footer>
 </body>
 
 </html>

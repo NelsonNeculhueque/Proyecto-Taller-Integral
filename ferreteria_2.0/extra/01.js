@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function ocultar_buscador() {
-        bars_search.style.top = "-10px";
+        bars_search.style.top = "-50px";
         cover_ctn_search.style.display = "none";
         inputSearch.value = "";
         box_search.style.display = "none"
@@ -87,3 +87,60 @@ document.addEventListener('DOMContentLoaded', function () {
     // Escuchar el evento "input" en el cuadro de búsqueda para obtener los nombres de productos
     inputSearch.addEventListener("input", obtenerNombresProductos);
 });
+
+
+//-------------------------
+
+function MeteImagen2(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/numero-2.jpg";
+}
+
+function SacaImagen2(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/numero-1.jpg";
+}
+
+function MeteImagen(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/numero-2.jpg";
+}
+
+function SacaImagen(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src ="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL";
+}
+function SacaImagen3(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src ="img/Aceite-Mezcla_500cc.jpg";
+}
+function MeteImagen1(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/numero-2.jpg";
+}
+
+function SacaImagen1(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png";
+}

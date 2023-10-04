@@ -12,36 +12,29 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     background-image: url(img/interior.jpeg);
-    height: 100vh;
-    width: 100%;
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
-
-.header-content{
+/* Encabezado */
+.pri {
     background-color: #333;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    position: relative;
     color: #fff;
-    z-index: 10;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar horizontalmente el contenido */
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 
 
 /* Menú */
 #menu {
     background-color: #444;
     color: white;
-    padding: 10px 0;
+    padding: 2px 0;
 }
 
 .MenInicio {
@@ -53,7 +46,7 @@ body {
 .MenInicio li {
     margin-right: 20px;
     list-style: none;
-    position: relative; 
+    position: relative;
 }
 
 .MenInicio a {
@@ -67,8 +60,8 @@ body {
     position: absolute;
     background-color: #333;
     z-index: 1;
-    top: 100%; 
-    left: 0; 
+    top: 100%;
+    left: 0;
 }
 
 .MenInicio li:hover ul {
@@ -77,30 +70,42 @@ body {
 }
 
 .MenInicio ul li {
-    margin: 0;
+    margin: 20px;
 }
 
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* Catálogo de Productos */
 .catalogo {
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
+    flex-wrap: wrap; /* Permite que las categorías se envuelvan en múltiples filas */
 }
 
 .categoria {
-    background-color: #C69749;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(58, 58, 58, 0.89);
+    border-radius: 10px;
+    box-shadow: 2px 4px rgba(233, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px;
-    width: calc(33.33% - 40px);
-    box-sizing: border-box;
+    margin: 20px; /* Ajusta el margen para controlar el espacio entre las categorías */
 }
 
 .categoria h3 {
+    color: aliceblue;
     font-size: 18px;
-    margin-bottom: 10px;
+    text-align: center;
 }
 
 .producto {
@@ -197,6 +202,7 @@ body {
 
 .carrusel a img{
     object-fit: cover;
+    background-color: #333;
     height: 300px;
     width: 200px;
     border-radius: 15px;
@@ -219,7 +225,7 @@ body {
     background-color: black;
     position: absolute;
     z-index: 4;
-    width: 48px;
+    width: 45px;
     height: 48px;
     text-align: center;
     border: 0;
@@ -237,7 +243,7 @@ body {
 }
 
 .carrusel-prev{
-    left: 0px;
+    left: -10px;
 
 }
 
@@ -245,49 +251,38 @@ body {
     right: 0px;
 }
 
-.MenInicio a:hover {
-    color: #ff6600; /* Cambio de color al pasar el mouse */
-}
-
-.MenInicio ul li {
-    margin: 20px;
-}
-
 #ctn-icon-search{
     right: 20px;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
 }
 
 #ctn-icon-search{
-    font-size: 18px;
     color: white;
     cursor: pointer;
     transition: all 300ms;
 }
+
 #ctn-icon-search i:hover{
     color: #46a2fd;
 }
 
 #ctn-bars-search{
     position: fixed;
-    top: -10px;
-    width: 100%;
+    top: -65px;
+    width: 90%;
     background-color: #333;
-    padding: 20px;
+    padding: 10px;
     z-index: 9;
     transition: all 600ms;
 }
 
 #ctn-bars-search input{
     display: block;
-    width: 1200px;
+    width: 50%;
     margin: auto;
     padding: 10px;
-    font-size: 18px;
     outline: 0;
 }
 
@@ -303,22 +298,6 @@ body {
     overflow: hidden;
 }
 
-#box-search li a{
-    display: block;
-    width: 1200px;
-    color: gray;
-    padding: 12px 20px;
-}
-
-#box-search li a:hover{
-    background: #f3f3f3;
-}
-
-#box-search li a i{
-    margin-right: 10px;
-    color: gray;
-}
-
 #cover-ctn-search{
     width: 100%;
     height: 100%;
@@ -329,10 +308,6 @@ body {
     display: none;
 }
 
-#icon-menu{
-    display: flex;
-    right: 60px;
-}
 
 @media screen and (max-width: 1220px){
     .header-content,
