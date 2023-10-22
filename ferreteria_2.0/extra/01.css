@@ -107,21 +107,120 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+.nav {    
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.navUser {
+    padding: 0px 8rem;
+}
+
+.navTitle {
+    display: flex;
+}
+
+.navTitle svg {
+    width: 80px;
+    height: 80px;
+
+}
+
+.navLink {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.navLink a {
+    margin: 0px 20px 0px 20px;
+    font-weight:900;
+    text-decoration: none;
+    color: black;
+}
+
+.navInput {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.navInput svg {
+    margin: 25px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0px;
+}
+
+.login {
+    background-color: #1E2019;
+
+
+}
+
+.loginTitle {
+    display: flex;
+    color: #548C2F;
+    justify-content: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 20rem;
+
+}
+
+.input {
+    margin: 1rem 0px;
+
+}
+
 .container-form {
     display: flex;
     justify-content: space-around;
     transition: all .5s ease-out;
+    
 }
 
-.welcome-back {
+
+
+.welcome-back{
     display: flex;
     align-items: center;
     text-align: center;
+
 }
+
 
 .message {
     background-color: rgba(51, 51, 51, 0.89);
-    border-radius: 15px;
+    border-radius: 20px;
+    padding: 1rem;
+    color: #fff;
+    transform:translate(102%,-80%);
+}
+.message-register {
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(243%,-90%);
+    color: #fff;
+
+}
+
+.message-inicio{
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 20px;
     padding: 1rem;
     color: #fff;
 }
@@ -149,8 +248,6 @@ footer {
 .message button:hover {
     background-color: rgb(23, 23, 112);
 }
-
-
 
 
 .create-account {
@@ -191,15 +288,15 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Centrar elementos horizontalmente */
+    text-align: center;
 }
 
 .formulario {
     border-radius: 15px;
     color: #fff;
     padding: 1rem;
-    margin: 2rem auto; /* Centrar el formulario horizontalmente */
-    max-width: 400px; /* Especificar un ancho máximo */
+    margin: 2rem auto; 
+    max-width: 400px; 
     background-color: rgba(51, 51, 51, 0.89);
 }
 
@@ -235,6 +332,9 @@ form {
     position: absolute;
     opacity: 0;
     visibility: hidden;
+    top: 18%; 
+    left: 20%; 
+    
 }
 
 .sign-in.active {
@@ -250,7 +350,7 @@ form {
     display: flex;
     justify-content: space-around;
     transition: all .5s ease-out;
-    margin: 0 auto; /* Centrar horizontalmente el formulario */
+    margin: 0 auto; 
 }
 
 form input[type="text"] {
@@ -260,4 +360,3 @@ form input[type="text"] {
     border-radius: 5px;
     transition: border-color 0.3s;
 }
-
