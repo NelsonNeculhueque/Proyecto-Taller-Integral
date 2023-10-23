@@ -62,3 +62,5 @@ function SacaImagen2(img) {
     // Cambia la imagen
     imagen.src = "img/numero-1.jpg";
 }
+
+
