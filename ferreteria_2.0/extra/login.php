@@ -98,12 +98,12 @@
                 <h2 class="sign-up-btn">Iniciar Sesion</h2>
                 <div class="iconos">
                     <a href="https://www.instagram.com/ferreteriabertuzzi/?hl=es">
-                    <div class="border-icon">
+                    <div>
                         <i class='bx bxl-instagram'></i>
                     </div>
                     </a>
                     <a href="https://www.facebook.com/people/Grandes-Tiendas-Ferretería-Bertuzzi/100012910236910/?paipv=0&eav=AfYR1hD35d6et8fQohjbQfTQ4fqVBv3fGwzCnhxtZW5XP9bT74zGxvJPl32nBgFrXQg&_rdr">
-                    <div class="border-icon">
+                    <div>
                         <i class='bx bxl-facebook-square' ></i>
                     </div>
                     </a>
