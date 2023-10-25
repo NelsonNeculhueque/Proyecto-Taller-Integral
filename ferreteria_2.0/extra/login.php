@@ -5,12 +5,12 @@
      <meta charset="UTF-8"> 
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="01.css" rel="stylesheet"> 
      <meta name="robots" content="noindex">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
      <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="01.css">
      <script src="01.js"></script>
     <style>
         header{
@@ -124,7 +124,7 @@
 
     </div>
     <video autoplay muted loop>
-            <source src="IMG/fondo.mp4" type="video/mp4">
+            <source src="img/fondo.mp4" type="video/mp4">
     </video>
     <div class="capa"></div>
 </main>        
