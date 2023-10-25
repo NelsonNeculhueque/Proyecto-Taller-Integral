@@ -1,0 +1,336 @@
+@import 'reset/mixins';
+
+
+body, h1, h2, h3, ul, li, p, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url(img/interior.jpeg);
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/* Encabezado */
+.pri {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar horizontalmente el contenido */
+}
+
+
+/* Menú */
+#menu {
+    background-color: #444;
+    color: white;
+    padding: 2px 0;
+}
+
+.MenInicio {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.MenInicio li {
+    margin-right: 20px;
+    list-style: none;
+    position: relative;
+}
+
+.MenInicio a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.MenInicio ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.MenInicio li:hover ul {
+    display: block;
+    flex-direction: column;
+}
+
+.MenInicio ul li {
+    margin: 20px;
+}
+
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Catálogo de Productos */
+.catalogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que las categorías se envuelvan en múltiples filas */
+}
+
+.categoria {
+    background-color: rgba(58, 58, 58, 0.89);
+    border-radius: 10px;
+    box-shadow: 2px 4px rgba(233, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px; /* Ajusta el margen para controlar el espacio entre las categorías */
+}
+
+.categoria h3 {
+    color: aliceblue;
+    font-size: 18px;
+    text-align: center;
+}
+
+.producto {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto a {
+    color: #333;
+    font-weight: bold;
+}
+
+.producto a:hover {
+    color: #ff6600;
+}
+
+
+.carousel {
+    width: 100%;
+    margin: 0px 0px;
+
+}
+
+@media(min-width:768px){
+    .carousel{
+        margin: 0px 60px;
+
+    }
+}
+
+.carousel h2{
+    font-size: 45px;
+    line-height: 38px;
+    padding-bottom: 50px;
+    opacity: .9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+.carrusel-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 304px;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 50vw;
+    overflow: hidden;
+}
+
+.carrusel-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+.carrusel{
+    position: relative;
+    width: 210px;
+    padding: 0 18px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+
+.carrusel h4{
+
+    position: absolute;
+    z-index: 1;
+    font-size: 22;
+    line-height: 23px;
+    color: white;
+    padding: 15px;
+
+}
+
+.carrusel h4 small {
+    font-size: 15px;
+    display: block;
+}
+
+.carrusel a img{
+    object-fit: cover;
+    background-color: #333;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0);
+    transition: .3s;
+}
+
+@media(min-width:768px){
+    .carrusel{
+        width: 275px;
+    }
+
+    .carrusel a img{
+        width: 250px;
+    }
+}
+
+.carrusel-arrow{
+    border-radius: 30px;
+    background-color: black;
+    position: absolute;
+    z-index: 4;
+    width: 45px;
+    height: 48px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+}
+
+.carrusel-arrow:focus{
+    outline: 0;
+}
+
+.carrusel-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0);
+}
+
+.carrusel-prev{
+    left: -10px;
+
+}
+
+.carrusel-next{
+    right: 0px;
+}
+
+#ctn-icon-search{
+    right: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#ctn-icon-search{
+    color: white;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+#ctn-icon-search i:hover{
+    color: #46a2fd;
+}
+
+#ctn-bars-search{
+    position: fixed;
+    top: -65px;
+    width: 90%;
+    background-color: #333;
+    padding: 10px;
+    z-index: 9;
+    transition: all 600ms;
+}
+
+#ctn-bars-search input{
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    outline: 0;
+}
+
+#box-search{
+    position: fixed;
+    top: 165px;
+    left: 19%;
+    transform: translateX(-50);
+    width: 1200px;
+    background: white;
+    z-index: 8;
+    display: none;
+    overflow: hidden;
+}
+
+#cover-ctn-search{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 7;
+    display: none;
+}
+
+
+@media screen and (max-width: 1220px){
+    .header-content,
+    .container-footer footer{
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+    #ctn-bars-search
+    #ctn-bars-search input,
+    #box-search{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    .container-aside{
+        flex-wrap: wrap;
+    }
+
+    .icon-menu{
+        right: 20px;
+    }
+    
+}

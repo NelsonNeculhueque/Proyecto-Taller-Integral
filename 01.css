@@ -1,0 +1,389 @@
+/* Estilos generales aaaaaaaaaaaa*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero{
+    min-height: 100vh;
+    position: relative;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1d;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+}
+
+.loginnn{
+    position: relative;
+    z-index: 2;
+}
+main{
+    width: 70%;
+    margin: auto;
+
+}
+/* Encabezado */
+#pri {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+/* Menú */
+#menu {
+    background-color: #444;
+    color: white;
+    padding: 2px 0;
+}
+
+.MenInicio {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.MenInicio li {
+    margin-right: 20px;
+    list-style: none;
+    position: relative;
+}
+
+.MenInicio a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.MenInicio ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.MenInicio li:hover ul {
+    display: block;
+    flex-direction: column;
+}
+
+.MenInicio ul li {
+    margin: 20px;
+}
+
+
+.MenInicio a:hover {
+    color: #ff6600; /* Cambio de color al pasar el mouse */
+}
+
+#historia{
+    width: 90%;
+    max-width: 1000px;
+}
+
+#articulos{
+    /*margin-top:10cm;*/
+    text-align: center;
+    margin-bottom: 50px;   
+    width: 50px;
+}
+
+#articulos td{
+    border: 5px solid black;
+    background-color: rgb(103, 179, 255);
+    text-decoration: none;
+}
+
+#articulos td a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav {    
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.navUser {
+    padding: 0px 8rem;
+}
+
+.navTitle {
+    display: flex;
+}
+
+.navTitle svg {
+    width: 80px;
+    height: 80px;
+
+}
+
+.navLink {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.navLink a {
+    margin: 0px 20px 0px 20px;
+    font-weight:900;
+    text-decoration: none;
+    color: black;
+}
+
+.navInput {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.navInput svg {
+    margin: 25px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0px;
+}
+
+.login {
+    background-color: #1E2019;
+
+
+}
+
+.loginTitle {
+    display: flex;
+    color: #548C2F;
+    justify-content: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 20rem;
+
+}
+
+.input {
+    margin: 1rem 0px;
+
+}
+
+.container-form {
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+    
+}
+
+
+
+.welcome-back{
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+.message {
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 20px;
+    padding: 1rem;
+    color: #fff;
+    transform:translate(102%,-80%);
+}
+.message-register {
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(243%,-90%);
+    color: #fff;
+
+}
+
+.message-inicio{
+    background-color: rgba(51, 51, 51, 0.89);
+    border-radius: 20px;
+    padding: 1rem;
+    color: #fff;
+}
+
+.message h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: blue;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover {
+    background-color: rgb(23, 23, 112);
+}
+
+
+.create-account {
+    padding: 2.7rem 0;
+    font-size: 1.7rem;
+}
+
+.iconos {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.border-icon {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    background-color: rgb(38, 38, 156);
+    cursor: pointer;
+}
+
+.cuenta-gratis {
+    padding: 2rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.formulario {
+    border-radius: 15px;
+    color: #fff;
+    padding: 1rem;
+    margin: 2rem auto; 
+    max-width: 400px; 
+    background-color: rgba(51, 51, 51, 0.89);
+}
+
+.formulario input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem; /* Agregar margen inferior */
+    background-color: transparent;
+    border: none;
+    border-bottom: white thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: white;
+}
+.formulario input[type="button"] {
+    width: 60%;
+    margin: auto;
+    border: solid thin white;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+}
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 18%; 
+    left: 20%; 
+    
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+.container-form {
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+    margin: 0 auto; 
+}
+
+form input[type="text"] {
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
