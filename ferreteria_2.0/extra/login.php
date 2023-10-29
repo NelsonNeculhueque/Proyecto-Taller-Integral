@@ -12,38 +12,12 @@
      <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
      <link rel="stylesheet" href="01.css">
      <script src="01.js"></script>
-    <style>
-        header{
-            position: relative;
-            z-index: 1;
-        }
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .loginnn{
-            position: relative;
-            z-index: 1;
-            padding-top: 3rem;
-        }
-
-        footer{
-            position: absolute;
-            z-index: 1;
-
-        }
-
     </style>
 </head>
 
 
 <!-- ____________________hola__________________________ -->
-<body>           
+<body background="img/fondo.gif">           
     <header>
                     <h1 id="pri">Ferretería Bertuzzi</h1>
                 
@@ -123,10 +97,6 @@
         </div>
 
     </div>
-    <video autoplay muted loop>
-            <source src="img/fondo.mp4" type="video/mp4">
-    </video>
-    <div class="capa"></div>
 </main>        
     <script>
     document.addEventListener("DOMContentLoaded", function() {
