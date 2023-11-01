@@ -28,6 +28,7 @@ include('sesiones.php');
                     <li>
                         <a id="boton" href="login.php">Iniciar Sesion</a>
                     </li>
+                    <li> <a href="home.php">Home</a></li>
                     <li> <a href="produyserv.php">Productos y Servicios</a></li>
                     <li> <a href="contacto.php">Contacto</a></li>
                     <li>
