@@ -54,33 +54,46 @@ include('sesiones.php');
     <main>
         <div class="container">
             <h2>Contacto</h2>
-            <form action="#" method="post">
+            <form action="bsd.php" method="post">
                 <div class="form-group">
-                    <label for="nombre">Nombre completo:</label>
+                    <label for="rut">Rut:</label>
+                    <input type="text" id="rut" name="rut" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
                 </div>
                 <div class="form-group">
-                    <label for="mensaje">Opinión:</label>
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
                     <textarea id="mensaje" name="mensaje" required></textarea>
                 </div>
-                
-                <div>
-                    <select name="selectContactForm" id="selectContactForm">
+                <div class="form-group">
+                    <label for="motivo">Motivo del contacto:</label>
+                    <select name="motivo" id="motivo">
                         <option value="sugerencia">Sugerencia</option>
                         <option value="reclamo">Reclamo</option>
                         <option value="felicitaciones">Felicitaciones</option>
                         <option value="consulta">Consulta</option>
                     </select>
-                </div> 
-                <br>               
+                </div>
+                <br>
                 <div class="form-group">
                     <button type="submit">Enviar</button>
                 </div>
             </form>
+
         </div>
     </main>
 
