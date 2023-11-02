@@ -96,6 +96,13 @@ include('sesiones.php');
             </form>
 
         </div>
+        <script>
+            const botoncito = document.querySelector("button");
+            botoncito.addEventListener("click", (event) => {
+                alert("Mensaje mandado con exito")
+                event.preventDefault()
+            })
+        </script>
     </main>
 
 

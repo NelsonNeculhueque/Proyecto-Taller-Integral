@@ -25,7 +25,7 @@ if ($stmt) {
     $stmt->bind_param("issssss", $rut, $nombre, $apellido, $correo, $direccion, $mensaje, $motivo);
 
     if ($stmt->execute()) {
-        echo "Cliente agregado exitosamente.";
+        echo "<script>alert('Éxito');</script>";
     } else {
         echo "Error al agregar el cliente: " . $stmt->error;
     }
