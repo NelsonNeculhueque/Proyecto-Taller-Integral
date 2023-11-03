@@ -14,6 +14,7 @@ include('sesiones.php');
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="02.css">
     <script defer src="01.js"></script>
+    <script src="carrito.js"></script>
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
@@ -40,7 +41,10 @@ include('sesiones.php');
                     <div id="icon-menu">
                         <i class="fas fa-bars"></i>
                     </div>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <div id="carrito-button">
+                            <i class="fas fa-shopping-cart" id="icon-search"></i> 
+                    </div>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <div>
                         <?php
                         if (!isset($_SESSION['correo'])) {
@@ -317,6 +321,12 @@ include('sesiones.php');
                     </div>
 
                 </div>
+                <div id="carrito" class="carrito-sidebar">
+                    <div class="carrito-content">
+                        <!-- Aquí mostrarás los productos en el carrito -->
+                    </div>
+                </div>
+                <button id="carrito-button">Abrir Carrito</button>
 
 
                 
