@@ -1,10 +1,12 @@
 @import 'reset/mixins';
 
+html {
+    scroll-behavior: smooth;
+  }
 
 body, h1, h2, h3, ul, li, p, a {
     margin: 0;
     padding: 0;
-    list-style: none;
     text-decoration: none;
 }
 
@@ -15,8 +17,9 @@ body {
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    margin: auto;
 }
+
 /* Encabezado */
 .pri {
     background-color: #333;
@@ -28,7 +31,6 @@ body {
     align-items: center;
     justify-content: center; /* Centrar horizontalmente el contenido */
 }
-
 
 /* Menú */
 #menu {
@@ -72,8 +74,6 @@ body {
 .MenInicio ul li {
     margin: 20px;
 }
-
-
 .MenInicio a:hover {
     color: #ff6600; /* Cambio de color al pasar el mouse */
 }
@@ -268,20 +268,6 @@ footer {
     color: #46a2fd;
 }
 
-#carrito-button{
-    right: 20px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    transition: all 300ms;
-}
-
-#carrito-button i:hover{
-    color: #46a2fd;
-}
-
 #ctn-bars-search{
     position: fixed;
     top: -65px;
@@ -338,24 +324,6 @@ footer {
 
 }
 
-.carrito-sidebar {
-    position: fixed;
-    top: 0;
-    right: -300px; /* Inicialmente, el cuadro estará fuera de la pantalla */
-    width: 300px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-}
-
-.carrito-content {
-    padding: 20px;
-    /* Agrega estilos adicionales según tu diseño */
-}
-
-
 @media screen and (max-width: 800px){
     .container-aside{
         flex-wrap: wrap;
@@ -364,5 +332,80 @@ footer {
     .icon-menu{
         right: 20px;
     }
+}
+
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor h3{
+    position: absolute;
+    z-index: 1;
+    color: rgb(0, 0, 0);
+    padding: 25px;
+    align-items: center;
+}
+.bloque {
+    width: 300px;
+    height: 600px;
+    border-radius: 5%;
+    margin: 10px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+    background-color: rgba(58, 58, 58, 0.89);
     
+}
+
+.bloque:hover {
+    transform: scale(1.1); /* Al pasar el mouse, aumentamos la escala un 10% (1.1 veces el tamaño original) */
+}
+
+.venta{
+    font-family: Georgia, Times, serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: -16cm;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product{
+    border: 5px solid black;
+    background-color: rgb(80, 109, 138);
+    text-decoration: none;
+    padding: 35px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flexbox;
+    text-align: center;
+    color: #fff;
+}
+
+.product h3 {
+    align-items: center;
+}
+
+.product img {
+    float: left; 
+    margin-right: 20px; 
+    margin-top: -29px;
+    border-radius: 15%;
+    margin-bottom: 20PX;
+    width: 135px;
+    height: 135px;
+}
+
+
+.car{
+  float: right;
 }

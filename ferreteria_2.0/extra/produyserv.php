@@ -2,6 +2,39 @@
 include('sesiones.php');
 ?>
 
+<?php
+// Requiere el archivo 'suplementos.php', que probablemente contiene la clase 'Database'
+require 'suplementos.php';
+
+// Crea una instancia de la clase 'Database' para interactuar con la base de datos
+$db = new Database();
+
+// Establece una conexión a la base de datos
+$con = $db->conectar();
+
+// Prepara y ejecuta una consulta SQL para seleccionar todos los registros de la tabla 'suplementos'
+$sql = $con->prepare("SELECT * FROM suplementos");
+$sql->execute();
+
+// Obtiene todos los resultados de la consulta en un arreglo asociativo y los almacena en 'resultado1'
+$resultado1 = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+// Prepara y ejecuta una consulta SQL similar para seleccionar todos los registros de la tabla 'maquinariamotor'
+$sql = $con->prepare("SELECT * FROM maquinariamotor");
+$sql->execute();
+
+// Obtiene todos los resultados de la segunda consulta en un arreglo asociativo y los almacena en 'resultado2'
+$resultado2 = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+// Prepara y ejecuta una consulta SQL para seleccionar todos los registros de la tabla 'implementoseg'
+$sql = $con->prepare("SELECT * FROM implementoseg");
+$sql->execute();
+
+// Obtiene todos los resultados de la tercera consulta en un arreglo asociativo y los almacena en 'resultado3'
+$resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,7 +45,7 @@ include('sesiones.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos y Servicios</title>
     <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="02.css">
+    <link href="02.css" rel="stylesheet">
     <script defer src="01.js"></script>
     <script src="carrito.js"></script>
 
@@ -75,49 +108,128 @@ include('sesiones.php');
 
     
 
-    <main>
-        
-<ul id="box-search"></ul>
+<main>
+    <br><br>
+    <ul id="box-search"></ul>
+    <div id="cover-ctn-search"> </div>
 
-<div id="cover-ctn-search"> </div>
 
-
-    <div class="catalogo">
-        <div class="categoria">
-            <tr>      
-                <td><h3>Seguridad</h3><br><a href="--">
-                    <img alt="Cambiar imagen" height="200"
-                    onmouseout= "SacaImagen1(this)"
-                    onmouseover="MeteImagen1(this)"
-                    src="https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png" id="vacio" /> <br>
+    <div class="contenedor">
+                    <a href="#seguridad">
+                        <h3>Seguridad</h3>
+                         <img src="https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png" alt=""class="bloque">   
                     </a>
-                </td>
-            </tr>
-        </div>
-        <div class="categoria">
-            <tr>    
-                <td><h3>Maquinas</h3><br><a href="--">
-                    <img alt="Cambiar imagen" height="200"
-                    onmouseout= "SacaImagen(this)"
-                    onmouseover="MeteImagen2(this)"
-                    src="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL" id="vacio1" /> <br>
+                    <a href="#Maquinas">
+                        <h3>Maquinas</h3>
+                        <img src="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL" alt=""class="bloque">
                     </a>
-                </td> 
-            </tr>
-        </div> 
-        <div class="categoria">
-            <tr>
-                <td><h3>Suplementos</h3><br><a href="--">
-                    <img alt="Cambiar imagen" height="200"
-                    onmouseout= "SacaImagen3(this)"
-                    onmouseover="MeteImagen2(this)"
-                    src="img/Aceite-Mezcla_500cc.jpg" id="vacio2" /> <br>
+                    <a href="#suplementos">
+                        <h3>Suplementos</h3>
+                        <img src="https://newobjects171122.us-southeast-1.linodeobjects.com/spree/images/2495/large/aceite-husqvarna-1l-hp.jpg?1674135953" alt=""class="bloque">
                     </a>
-                </td> 
-            </tr>
-        </div>
-        
     </div>
+    <section>
+    <div id="seguridad">
+        <br>
+        <h2 class="venta">SEGURIDAD:</h2>
+        <br>
+
+        <!-- Comienza un bucle para recorrer el arreglo $resultado3 -->
+        <?php foreach ($resultado3 as $SEG) { ?>
+            <div class="art">
+                <?php
+                // Obtiene el ID del implemento de seguridad
+                $id = $SEG['ID_Implemento'];
+
+                // Construye la ruta de la imagen basada en el ID
+                $imagen = "img/imagenes bd/seguridad " . $id . ".jpg";
+
+                // Comprueba si el archivo de imagen existe
+                if (!file_exists($imagen)) {
+                    // Si no existe, se usa una imagen de respaldo
+                    $imagen = "img/numero-1.jpg";
+                }
+                ?>
+                <!-- Contenedor para cada elemento de seguridad -->
+                <div class="product">
+                    <!-- Muestra la imagen del implemento de seguridad -->
+                    <img width="150" height="150" src="<?php echo $imagen; ?>" class="imagen-suplemento">
+
+                    <!-- Muestra el tipo de implemento de seguridad -->
+                    <h3><?php echo $SEG['Tipo_Implemento']; ?></h3>
+                    <div class="car">
+                        <button onclick="agregarAlCarro('seguridad', '<?php echo $SEG['Tipo_Implemento']; ?>', '<?php echo $SEG['ID_Implemento']; ?>')">Añadir al carro</button>
+                    </div> <!-- Botón para añadir al carro -->
+                    <br>
+
+                    <!-- Muestra el precio del implemento de seguridad -->
+                    <p>Precio: $<?php echo $SEG['Precio']; ?></p>
+                    <br>
+                </div>
+            </div>
+        <?php } // Fin del bucle ?>
+    </div>
+
+    <div id="Maquinas">
+        <br>
+        <h2 class="venta">MAQUINARIA:</h2><br>
+        <?php foreach ($resultado2 as $MAQ) { ?>
+            <div class="art">
+                <?php
+                $id = $MAQ['ID_Maquinaria'];
+                $imagen = "img/imagenes bd/Maquinaria " . $id . ".jpg";
+                if (!file_exists($imagen)) {
+                    $imagen = "img/numero-1.jpg";
+                }
+                ?>
+
+                <div class="product">
+                    <img src="<?php echo $imagen; ?>" class="imagen-suplemento">
+                    <h3><?php echo $MAQ['Tipo_Maquinaria']; ?></h3>
+                    <p>Modelo: <?php echo $MAQ['Modelo']; ?></p>
+                    <div class="car">
+                        <button onclick="agregarAlCarro('maquinaria', '<?php echo $MAQ['Tipo_Maquinaria']; ?>', '<?php echo $MAQ['ID_Maquinaria']; ?>')">Añadir al carro</button>
+                    </div>
+                    <br>
+
+                    <p>Precio: $<?php echo $MAQ['Precio']; ?></p>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+
+    <div id="suplementos">
+        <br>
+        <h2 class="venta">SUPLEMENTOS:</h2><br>
+        <?php foreach ($resultado1 as $SUP) { ?>
+            <div class="art">
+                <?php
+                $id = $SUP['ID_Suplemento'];
+                $imagen = "img/imagenes bd/suplemento " . $id . ".jpg";
+                if (!file_exists($imagen)) {
+                    $imagen = "img/numero-1.jpg";
+                }
+                ?>
+
+                <div class="product">
+                    <img src="<?php echo $imagen; ?>" class="imagen-suplemento">
+                    <h3><?php echo $SUP['Nombre_Suple']; ?></h3>
+                    <div class="car">
+                        <button onclick="agregarAlCarro('suplementos', '<?php echo $SUP['Nombre_Suple']; ?>', '<?php echo $SUP['ID_Suplemento']; ?>')">Añadir al carro</button>
+                    </div>
+                    <br>
+                    <p>Precio: $<?php echo $SUP['Precio']; ?></p><br>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+    <script type="text/javascript">
+    function agregarAlCarro(nombreTabla, nombreProducto, idProducto) {
+        alert("Nombre de la tabla: " + nombreTabla + "\nNombre del producto: " + nombreProducto + "\nID del producto: " + idProducto);
+}
+
+    </script>
+</section>
     
     <div class="carousel">
 
