@@ -32,7 +32,7 @@
                             <li> <a href="quienessomos.php">Quienes somos</a>
                             </li>
                         </ul>
-                    </div>
+          vscode-file://vscode-app/c:/Users/xsant/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html          </div>
     </header>
     <main class="home">
     <section>
@@ -56,7 +56,7 @@
     </section>
     
 
-    <!-- barra lateral que muestra redes y autores de la página web-->
+    <!-- barra lateral que muestra redes y autores de la pï¿½gina web-->
     <aside>
         <h1>Nuestras redes</h1>
         <a href="https://www.instagram.com/ferreteriabertuzzi/?hl=es">

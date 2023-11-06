@@ -363,17 +363,7 @@ footer {
     padding: 25px;
     align-items: center;
 }
-.bloque {
-    width: 300px;
-    height: 600px;
-    border-radius: 5%;
-    margin: 10px;
-    text-align: center;
-    line-height: 300px;
-    color: #fff;
-    background-color: rgba(58, 58, 58, 0.89);
-    
-}
+
 
 .bloque:hover {
     transform: scale(1.1); /* Al pasar el mouse, aumentamos la escala un 10% (1.1 veces el tamaño original) */
@@ -424,3 +414,10 @@ footer {
 .car{
   float: right;
 }
+
+
+.div_hide {
+    opacity: 0;
+  }
+
+

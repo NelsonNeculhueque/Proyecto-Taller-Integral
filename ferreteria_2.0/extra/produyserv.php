@@ -51,7 +51,13 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
+<style>
+    #seguridad, #Maquinas, #suplementos {
+        display: none;
+    }
 
+    
+</style>
 <body>
     <header>
         <div class="header-content">
@@ -104,6 +110,31 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     botonnn.textContent = "Cerrar Sesion";
                     botonnn.href = "cerrar_sesion.php";
                 }
+                
+                function mostrar_Seguridad(){
+                    var div_s = document.getElementById("seguridad");
+                    if(div_s.style.display === "none"){
+                        div_s.style.display = "block"; 
+                    } else{
+                        div_s.style.display = "none";
+                    }
+                }
+                function mostrar_Maquinaria(){
+                    var div_m = document.getElementById("Maquinas");    
+                    if(div_m.style.display === "none"){
+                        div_m.style.display = "block"; 
+                    } else{
+                        div_m.style.display = "none";
+                    }
+                }
+                function mostrar_Suplementos(){
+                    var div_su = document.getElementById("suplementos");
+                    if(div_su.style.display === "none"){
+                        div_su.style.display = "block"; 
+                    } else{
+                        div_su.style.display = "none";
+                    }
+                }        
         </script>
 
     
@@ -115,18 +146,18 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="contenedor">
-                    <a href="#seguridad">
+                    <button id="security" onclick="mostrar_Seguridad()">
                         <h3>Seguridad</h3>
                          <img src="https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png" alt=""class="bloque">   
-                    </a>
-                    <a href="#Maquinas">
+                    </button>
+                    <button id="maquina" onclick="mostrar_Maquinaria()">
                         <h3>Maquinas</h3>
                         <img src="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL" alt=""class="bloque">
-                    </a>
-                    <a href="#suplementos">
+                    </button>
+                    <button id="suple" onclick="mostrar_Suplementos()">
                         <h3>Suplementos</h3>
                         <img src="https://newobjects171122.us-southeast-1.linodeobjects.com/spree/images/2495/large/aceite-husqvarna-1l-hp.jpg?1674135953" alt=""class="bloque">
-                    </a>
+                    </button>
     </div>
     <section>
     <div id="seguridad">
@@ -459,7 +490,10 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
 
-    <script src="JS/02.js" ></script>
+    <script src="JS/02.js">     
+
+
+    </script>
     </main>
 
     <footer>
