@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-$conn = new mysqli('localhost', 'root', '', 'login');
+$conn = new mysqli('localhost', 'root', '', 'login2');
 $response = array();
 
 if ($conn->connect_error) {
