@@ -14,18 +14,26 @@ if ($conn->connect_error) {
         $correo = ($_POST["correo"]);
         $contraseña = ($_POST["contraseña"]);
 
-        $sql = "INSERT INTO usuarios (rut, nombre, apellido, correo, contraseña) VALUES ('$rut', '$nombre', '$apellido', '$correo', '$contraseña')";
-
-        if ($conn->query($sql)) {
-  
-
-            $response = array('success' => 'Registro exitoso');
-        } else {
-            $response = array('error' => 'Error: ' . $conn->error);
+        $sqlrevisar = "SELECT * FROM usuarios";
+        $result = $conn->query($sqlrevisar);
+        if ($result->num_rows >= 1){
+            $response = array('error' => 'Los datos proporcionados ya existen, Porfavor ingrese otros datos');
+        }
+        else{
+            $sql = "INSERT INTO usuarios (rut, nombre, apellido, correo, contraseña) VALUES ('$rut', '$nombre', '$apellido', '$correo', '$contraseña')";
+            if($conn->query($sql)){
+                $response = array('success' => 'Registro exitoso');
+            }
+            else{
+            $response = array('error' => 'Registro erroneo');
+            }
         }
     } else {
         $response = array('error' => 'Faltan datos en la solicitud POST');
     }
+
+
+
 }
 
 header('Content-Type: application/json');

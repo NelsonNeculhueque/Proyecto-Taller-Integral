@@ -109,28 +109,48 @@
             const correo = document.getElementById("email").value;
             const direccion = document.getElementById("contra").value;
             const nuevoform = new FormData();
+            var detector_numeros = /^[0-9]+$/;
+            var detector_correos = /@/
             nuevoform.append("rut", rut);
             nuevoform.append("nombre", nombre);
             nuevoform.append("apellido", apellido);
             nuevoform.append("correo", correo);
             nuevoform.append("contraseña", direccion);
             form = document.getElementById("keso");
-            
+            if(rut === "" || nombre === "" || apellido === "" || correo === "" || direccion === ""){
+                alert("Error, Debe llenar todos los campos");
+                return false
+            }
+
+            if(detector_numeros.test(rut)){
+            }
+            else{
+                alert("Deben haber solo numeros en el campo RUT (sin guion ni puntos)");
+                return false
+            }
+            if(detector_correos.test(correo)){
+            }
+            else{
+                alert("Debe introducir un Correo Valido, recuerde usar @ y punto");
+                return false
+            }
             fetch('registro.php', {
                 method: 'POST',
                 body: nuevoform 
             })
             .then(response => {
                 if(response.ok){
-                    alert("exito");
-                    window.location.href = "produyserv.php";
-                }}
-                )
+                    return response.json();
+                }
+                 else{
+                    throw new Error("error");
+                }})
                 .then(data => {
                     if (data.error) {
                         alert(data.error);
-                    } else {
-                        console.log("Registro exitoso");         
+                    } else if (data.success) {
+                        alert("Registro exitoso");         
+                        window.location.href = "produyserv.php";
                         }
                     })
                 });
@@ -143,6 +163,7 @@
                 botonnn.textContent = "Cerrar Sesion";
                 botonnn.href = "cerrar_sesion.php";
         }
+        
 
     </script>
     <footer>
