@@ -74,7 +74,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div id="icon-menu">
                         <i class="fas fa-bars"></i>
                     </div>
-                    <div id="carrito-button">
+                    <div id="carrito-button" >
                             <i class="fas fa-shopping-cart" id="icon-search"></i> 
                     </div>
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -438,10 +438,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                         <!-- Aquí mostrarás los productos en el carrito -->
                     </div>
                 </div>
-                <button id="carrito-button">Abrir Carrito</button>
 
-
-                
 
             </div>
 
