@@ -105,6 +105,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
         <script>
                 var usuarioIniciado = <?php echo isset($_SESSION['correo']) ? 'true' : 'false'; ?>;
                 var botonnn = document.getElementById("boton");
+                var divs = ["seguridad", "Maquinas", "suplementos"];
                 
                 if(usuarioIniciado){
                     botonnn.textContent = "Cerrar Sesion";
@@ -135,6 +136,17 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                         div_su.style.display = "none";
                     }
                 }        
+
+                function mostrarDiv(id) {
+                    for (var i = 0; i < divs.length; i++) {
+                        var div = document.getElementById(divs[i]);
+                        if (divs[i] === id) {
+                            div.style.display = "block";
+                        } else {
+                            div.style.display = "none";
+                        }
+                    }
+                }
         </script>
 
     
@@ -146,15 +158,15 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="contenedor">
-                    <button id="security" onclick="mostrar_Seguridad()">
+                    <button id="security" onclick="mostrarDiv('seguridad')">
                         <h3>Seguridad</h3>
                          <img src="https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png" alt=""class="bloque">   
                     </button>
-                    <button id="maquina" onclick="mostrar_Maquinaria()">
+                    <button id="maquina" onclick="mostrarDiv('Maquinas')">
                         <h3>Maquinas</h3>
                         <img src="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL" alt=""class="bloque">
                     </button>
-                    <button id="suple" onclick="mostrar_Suplementos()">
+                    <button id="suple" onclick="mostrarDiv('suplementos')">
                         <h3>Suplementos</h3>
                         <img src="https://newobjects171122.us-southeast-1.linodeobjects.com/spree/images/2495/large/aceite-husqvarna-1l-hp.jpg?1674135953" alt=""class="bloque">
                     </button>
