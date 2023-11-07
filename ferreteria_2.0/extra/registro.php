@@ -14,7 +14,7 @@ if ($conn->connect_error) {
         $correo = ($_POST["correo"]);
         $contraseña = ($_POST["contraseña"]);
 
-        $sqlrevisar = "SELECT * FROM `usuarios` WHERE rut && nombre && apellido && correo && contraseña";
+        $sqlrevisar = "SELECT * FROM `usuarios` WHERE rut = '$rut' AND nombre = '$nombre' AND apellido = '$apellido' AND correo = '$correo'";;
         $result = $conn->query($sqlrevisar);
         if ($result->num_rows > 0){
             $response = array('error' => 'Los datos proporcionados ya existen, Porfavor ingrese otros datos');
