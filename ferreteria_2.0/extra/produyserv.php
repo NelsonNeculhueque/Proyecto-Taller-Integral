@@ -196,7 +196,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Contenedor para cada elemento de seguridad -->
                 <div class="product">
                     <!-- Muestra la imagen del implemento de seguridad -->
-                    <img width="150" height="150" src="<?php echo $imagen; ?>" class="imagen-suplemento">
+                    <td><img src="data:image/jpeg;base64,<?php echo base64_encode($SEG['Imagen']); ?>" class="imagen-seguridad"></td>
 
                     <!-- Muestra el tipo de implemento de seguridad -->
                     <h3><?php echo $SEG['Tipo_Implemento']; ?></h3>
@@ -220,14 +220,10 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
             <div class="art">
                 <?php
                 $id = $MAQ['ID_Maquinaria'];
-                $imagen = "img/imagenes bd/Maquinaria " . $id . ".jpg";
-                if (!file_exists($imagen)) {
-                    $imagen = "img/numero-1.jpg";
-                }
                 ?>
 
                 <div class="product">
-                    <img src="<?php echo $imagen; ?>" class="imagen-suplemento">
+                <td><img src="data:image/jpeg;base64,<?php echo base64_encode($MAQ['Imagen']); ?>" class="imagen-suplemento"></td>
                     <h3><?php echo $MAQ['Tipo_Maquinaria']; ?></h3>
                     <p>Modelo: <?php echo $MAQ['Modelo']; ?></p>
                     <div class="car">
@@ -255,7 +251,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                 ?>
 
                 <div class="product">
-                    <img src="<?php echo $imagen; ?>" class="imagen-suplemento">
+                    <td><img src="data:image/jpeg;base64,<?php echo base64_encode($SUP['Imagen']); ?>" class="imagen-suplementos"></td>
                     <h3><?php echo $SUP['Nombre_Suple']; ?></h3>
                     <div class="car">
                         <button onclick="agregarAlCarro('suplementos', '<?php echo $SUP['Nombre_Suple']; ?>', '<?php echo $SUP['ID_Suplemento']; ?>')">Añadir al carro</button>
