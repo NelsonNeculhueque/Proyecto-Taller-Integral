@@ -40,14 +40,18 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
 <html lang="es">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos y Servicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <meta name="robots" content="noindex">
     <link href="02.css" rel="stylesheet">
     <script defer src="01.js"></script>
-    <script src="carrito.js"></script>
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
@@ -80,10 +84,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div id="icon-menu">
                         <i class="fas fa-bars"></i>
                     </div>
-                    <div id="carrito-button" >
-                            <i class="fas fa-shopping-cart" id="icon-search"></i> 
-                    </div>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal_cart" style="cursor:pointer;" onclick="consultar_carrito()"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
                     <div>
                         <?php
                         if (!isset($_SESSION['correo'])) {
@@ -101,6 +102,29 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
         </div>
         </header>
+
+        
+        <div class="modal fade" id="modal_cart" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mi carrito</h5> <!-- Se corrigió el cierre de la etiqueta h5 -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Se corrigió el cierre de la etiqueta button -->
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <div class="p-2">
+                        <div id="mi_carrito"></div> <!-- Se corrigió el cierre de la etiqueta div -->
+                    </div>
+               </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> <!-- Se corrigió el cierre de la etiqueta button -->
+        <a type="button" class="btn btn-primary" onclick="borrar_carrito();">Vaciar carrito</a> <!-- Se corrigió el cierre de la etiqueta a -->
+      </div>
+    </div>
+  </div>
+</div>
 
         <script>
                 var usuarioIniciado = <?php echo isset($_SESSION['correo']) ? 'true' : 'false'; ?>;
@@ -201,7 +225,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <!-- Muestra el tipo de implemento de seguridad -->
                     <h3><?php echo $SEG['Tipo_Implemento']; ?></h3>
                     <div class="car">
-                        <button onclick="agregarAlCarro('seguridad', '<?php echo $SEG['Tipo_Implemento']; ?>', '<?php echo $SEG['ID_Implemento']; ?>')">Añadir al carro</button>
+                         <button onclick="agregarAlCarro('implemento', '<?php echo $SEG['Tipo_Implemento']; ?>', '<?php echo $SEG['ID_Implemento']; ?>', <?php echo $SEG['Precio']; ?>)">Añadir al carro</button>
                     </div> <!-- Botón para añadir al carro -->
                     <br>
 
@@ -227,7 +251,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <h3><?php echo $MAQ['Tipo_Maquinaria']; ?></h3>
                     <p>Modelo: <?php echo $MAQ['Modelo']; ?></p>
                     <div class="car">
-                        <button onclick="agregarAlCarro('maquinaria', '<?php echo $MAQ['Tipo_Maquinaria']; ?>', '<?php echo $MAQ['ID_Maquinaria']; ?>')">Añadir al carro</button>
+                    <button onclick="agregarAlCarro('maquinaria', '<?php echo $MAQ['Tipo_Maquinaria']; ?>', '<?php echo $MAQ['ID_Maquinaria']; ?>', <?php echo $MAQ['Precio']; ?>)">Añadir al carro</button>
                     </div>
                     <br>
 
@@ -254,7 +278,7 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <td><img src="data:image/jpeg;base64,<?php echo base64_encode($SUP['Imagen']); ?>" class="imagen-suplementos"></td>
                     <h3><?php echo $SUP['Nombre_Suple']; ?></h3>
                     <div class="car">
-                        <button onclick="agregarAlCarro('suplementos', '<?php echo $SUP['Nombre_Suple']; ?>', '<?php echo $SUP['ID_Suplemento']; ?>')">Añadir al carro</button>
+                    <button onclick="agregarAlCarro('suplementos', '<?php echo $SUP['Nombre_Suple']; ?>', '<?php echo $SUP['ID_Suplemento']; ?>', <?php echo $SUP['Precio']; ?>)">Añadir al carro</button>
                     </div>
                     <br>
                     <p>Precio: $<?php echo $SUP['Precio']; ?></p><br>
@@ -263,11 +287,71 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
         <?php } ?>
     </div>
     <script type="text/javascript">
-    function agregarAlCarro(nombreTabla, nombreProducto, idProducto) {
-        alert("Nombre de la tabla: " + nombreTabla + "\nNombre del producto: " + nombreProducto + "\nID del producto: " + idProducto);
-}
+        function agregarAlCarro(nombreTabla, nombreProducto, idProducto, precio) {
+            var ref = idProducto;
+            var titulo = nombreProducto;
+            var cantidad = 1;
 
-    </script>
+            var producto = {
+            ref: ref,
+            titulo: titulo,
+            precio: precio,
+            cantidad: cantidad
+        };
+
+        fetch('cart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(producto),
+        })
+        .then(response => response.json())
+        .then(data => {
+        // Maneja la respuesta (puede ser un mensaje de éxito, por ejemplo)
+        Swal.fire('Hecho!', 'Se ha añadido exitosamente.', 'success');
+    })
+    .catch(error => {
+        // Maneja cualquier error que ocurra durante la solicitud
+        Swal.fire('Error!', 'Se ha producido un error.', 'error');
+    });
+    }
+    function consultar_carrito() {
+        fetch('modal_carrito.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}), // Puedes enviar datos en el cuerpo de la solicitud si es necesario
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("mi_carrito").innerHTML = data;
+        })
+    .   catch(error => {
+            console.error('Error al obtener el contenido del carrito:', error);
+        });
+    }
+    function borrar_carrito() {
+        var parametros = {};
+
+        fetch('borracarro.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(parametros), // Puedes enviar datos en el cuerpo de la solicitud si es necesario
+        })
+        .then(response => response.text())
+        .then(data => {
+            consultar_carrito(); // Llama a la función para obtener el contenido actualizado del carrito
+        })
+        .catch(error => {
+            console.error('Error al borrar el carrito:', error);
+        });
+    }
+   
+</script>
 </section>
     
     <div class="carousel">
