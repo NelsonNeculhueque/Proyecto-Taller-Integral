@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Configurar y enviar la solicitud AJAX al archivo PHP solo si hay un valor en la búsqueda
         var searchTerm = inputSearch.value.trim();
         if (searchTerm.length > 0) {
-            xhr.open('GET', 'bsd.php', true);
+            xhr.open('GET', 'bsd1.php', true);
             xhr.send();
         }
     }
