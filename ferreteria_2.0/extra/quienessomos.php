@@ -9,7 +9,7 @@ include('sesiones.php');
      <title>Historia</title>
      <meta charset="UTF-8"> 
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="04.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="04.css">
      <meta name="robots" content="noindex">
      <script defer src="01.js"></script>
  </head>
@@ -50,12 +50,16 @@ include('sesiones.php');
     <p id="historia">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut finibus non lacus vel mattis. Sed iaculis tempor leo. Integer convallis arcu dolor, id facilisis orci pretium ac. Sed suscipit facilisis ullamcorper. Pellentesque vitae nisl enim. In sit amet elit felis. Integer vitae leo est. Nullam vel ornare ex. Mauris consectetur nisi velit, vel facilisis arcu tristique sit amet. Suspendisse consectetur sapien eget efficitur feugiat. Aliquam et lectus nulla. Sed cursus, orci non tempus hendrerit, enim est maximus odio, sed fermentum mauris felis nec odio. Duis feugiat ut augue quis porttitor.
     </p>
+
+
     <h2 id ="sec">Equipo</h2>
-    <div class="yo">
-        <img alt="Cambiar imagen" height="200"
-        onmouseout= "SacaImagen2(this)"
-        onmouseover="MeteImagen2(this)"
-        src="img/numero-1.jpg" id="vacio" />
+
+    <div class="yo" >
+
+        <img alt="Cambiar imagen"
+        onmouseout= "SacaImagen(this)"
+        onmouseover="MeteImagen(this)"
+        src="img/equipo/Gianluca1.jpg" id="vacio" />
         <h4>Gianluca Alesandro Bertuzzi Toro</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -65,11 +69,13 @@ include('sesiones.php');
         </h5>
     </div>
 
+
+
     <div class="yo">
         <img alt="Cambiar imagen" height="200"
-        onmouseout= "SacaImagen2(this)"
-        onmouseover="MeteImagen2(this)"
-        src="img/numero-1.jpg" id="vacio1" />
+        onmouseout= "SacaImagen1(this)"
+        onmouseover="MeteImagen1(this)"
+        src="img/equipo/Nelson1.jpg" id="vacio1" />
         <h4>Nelson Abner Neculhueque Sepulveda</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -78,6 +84,8 @@ include('sesiones.php');
             <li>RUT. 21.857.406-8</li>
         </h5>
     </div>
+
+
     <div class="yo">
         <img alt="Cambiar imagen" height="200"
         onmouseout= "SacaImagen2(this)"
@@ -94,9 +102,9 @@ include('sesiones.php');
     
     <div class="yo">
         <img alt="Cambiar imagen" height="200"
-        onmouseout= "SacaImagen2(this)"
-        onmouseover="MeteImagen2(this)"
-        src="img/numero-1.jpg" id="vacio3" />
+        onmouseout= "SacaImagen3(this)"
+        onmouseover="MeteImagen3(this)"
+        src="img/equipo/Javier1.jpg" id="vacio3" />
         <h4>Javier Benjamin Poblete Ibarra</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>
@@ -108,9 +116,9 @@ include('sesiones.php');
     
     <div class="yo">
         <img alt="Cambiar imagen" height="200"
-        onmouseout= "SacaImagen2(this)"
-        onmouseover="MeteImagen2(this)"
-        src="img/numero-1.jpg" id="vacio4" />
+        onmouseout= "SacaImagen4(this)"
+        onmouseover="MeteImagen4(this)"
+        src="img/equipo/Abdiel1.jpg" id="vacio4" />
         <h4>Abdiel Antonio Molina Cifuentes</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>

@@ -46,21 +46,5 @@ buttonnext.addEventListener("click", function (event) {
 
 
 
-//-------------------------
-function MeteImagen2(img) {
-    // Obten la imagen principal por su id
-    var imagen = document.getElementById(img.id);
-
-    // Cambia la imagen
-    imagen.src = "img/numero-2.jpg";
-}
-
-function SacaImagen2(img) {
-    // Obten la imagen principal por su id
-    var imagen = document.getElementById(img.id);
-
-    // Cambia la imagen
-    imagen.src = "img/numero-1.jpg";
-}
 
 

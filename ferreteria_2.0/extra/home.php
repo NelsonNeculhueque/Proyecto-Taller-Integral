@@ -32,8 +32,7 @@
                             <li> <a href="quienessomos.php">Quienes somos</a>
                             </li>
                         </ul>
-          vscode-file://vscode-app/c:/Users/xsant/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html          </div>
-    </header>
+   </header>
     <main class="home">
     <section>
         <h1>Bienvenido a Ferreteria Bertuzzi!<br></h1>

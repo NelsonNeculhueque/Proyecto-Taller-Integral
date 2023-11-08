@@ -84,6 +84,7 @@ footer{
     align-items: center; 
 }
 
+
 .yo h4 {
     color: #333;
 }
@@ -92,6 +93,10 @@ footer{
     color: #555;
 }
 
+.yo img {
+    width: 300px; /* Aumenta el ancho de la imagen a 300 píxeles */
+    height: auto; /* Mantén la relación de aspecto original */
+}
 
 /* Contenido de la historia */
 #sec {
@@ -105,17 +110,6 @@ footer{
     border-radius: 5px;
 }
 
-#historia img {
-    float: left; 
-    margin-right: 20px; 
-}
-img {
-    float: left; 
-    margin-right: 20px; 
-    width: 100px;
-    height: 100px;
-}
-
 
 h4 {
     margin-top: 10px;
@@ -127,7 +121,3 @@ h5 {
     color: #777;
 }
 
-#yo img {
-    max-width: 100px;
-    border-radius: 30%;
-}

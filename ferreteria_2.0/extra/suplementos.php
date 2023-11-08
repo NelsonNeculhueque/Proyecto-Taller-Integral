@@ -3,7 +3,7 @@ class Database
 {
     // Propiedades que almacenan la información de conexión a la base de datos
     private $hostname = "localhost";  // Nombre del servidor de la base de datos
-    private $database = "ferreteriavirtual";  // Nombre de la base de datos
+    private $database = "ferreteriavirtual2";  // Nombre de la base de datos
     private $username = "root";  // Nombre de usuario de la base de datos
     private $password = "";  // Contraseña de la base de datos
     private $charset = "utf8";  // Conjunto de caracteres para la conexión

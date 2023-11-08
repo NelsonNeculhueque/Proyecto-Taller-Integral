@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Configurar y enviar la solicitud AJAX al archivo PHP solo si hay un valor en la búsqueda
         var searchTerm = inputSearch.value.trim();
         if (searchTerm.length > 0) {
-            xhr.open('GET', 'bsd1.php', true);
+            xhr.open('GET', 'bsd.php', true);
             xhr.send();
         }
     }
@@ -90,6 +90,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //-------------------------
+
+function MeteImagen(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/equipo/Gianluca2.jpg";
+}
+
+function SacaImagen(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src ="img/equipo/Gianluca1.jpg";
+}
+
+function MeteImagen1(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/equipo/Nelson2.jpg";
+}
+
+function SacaImagen1(img) {
+    // Obten la imagen principal por su id
+    var imagen = document.getElementById(img.id);
+
+    // Cambia la imagen
+    imagen.src = "img/equipo/Nelson1.jpg";
+}
 
 function MeteImagen2(img) {
     // Obten la imagen principal por su id
@@ -107,40 +139,34 @@ function SacaImagen2(img) {
     imagen.src = "img/numero-1.jpg";
 }
 
-function MeteImagen(img) {
+function MeteImagen3(img) {
     // Obten la imagen principal por su id
     var imagen = document.getElementById(img.id);
 
     // Cambia la imagen
-    imagen.src = "img/numero-2.jpg";
+    imagen.src = "img/equipo/Javier2.jpg";
 }
 
-function SacaImagen(img) {
-    // Obten la imagen principal por su id
-    var imagen = document.getElementById(img.id);
-
-    // Cambia la imagen
-    imagen.src ="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL";
-}
 function SacaImagen3(img) {
     // Obten la imagen principal por su id
     var imagen = document.getElementById(img.id);
 
     // Cambia la imagen
-    imagen.src ="img/Aceite-Mezcla_500cc.jpg";
+    imagen.src ="img/equipo/Javier1.jpg";
 }
-function MeteImagen1(img) {
+
+function MeteImagen4(img) {
     // Obten la imagen principal por su id
     var imagen = document.getElementById(img.id);
 
     // Cambia la imagen
-    imagen.src = "img/numero-2.jpg";
+    imagen.src = "img/equipo/Abdiel2.jpg";
 }
 
-function SacaImagen1(img) {
+function SacaImagen4(img) {
     // Obten la imagen principal por su id
     var imagen = document.getElementById(img.id);
 
     // Cambia la imagen
-    imagen.src = "https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png";
+    imagen.src ="img/equipo/Abdiel1.jpg";
 }

@@ -182,17 +182,18 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="contenedor">
+        
                     <button id="security" onclick="mostrarDiv('seguridad')">
                         <h3>Seguridad</h3>
-                         <img src="https://gardenmas.com/pub/media/catalog/product/cache/bc3a6cfac3aaa1129df63ddb4a7897e1/c/a/casco_spire_vent.png" alt=""class="bloque">   
+                         <img src="img\seguridad.png" alt=""class="bloque">   
                     </button>
                     <button id="maquina" onclick="mostrarDiv('Maquinas')">
                         <h3>Maquinas</h3>
-                        <img src="https://www-static-nw.husqvarna.com/-/images/aprimo/husqvarna/chainsaws/photos/studio/h110-0038.webp?v=2ab3cf2d23296e8&format=WEBP_LANDSCAPE_CONTAIN_XL" alt=""class="bloque">
+                        <img src="img\maquinaria.png" alt=""class="bloque">
                     </button>
                     <button id="suple" onclick="mostrarDiv('suplementos')">
                         <h3>Suplementos</h3>
-                        <img src="https://newobjects171122.us-southeast-1.linodeobjects.com/spree/images/2495/large/aceite-husqvarna-1l-hp.jpg?1674135953" alt=""class="bloque">
+                        <img src="img\suplementos.png" alt=""class="bloque">
                     </button>
     </div>
     <section>
@@ -200,30 +201,17 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
         <br>
         <h2 class="venta">SEGURIDAD:</h2>
         <br>
-
-        <!-- Comienza un bucle para recorrer el arreglo $resultado3 -->
-        <?php foreach ($resultado3 as $SEG) { ?>
-            <div class="art">
-                <?php
-                // Obtiene el ID del implemento de seguridad
-                $id = $SEG['ID_Implemento'];
-
-                // Construye la ruta de la imagen basada en el ID
-                $imagen = "img/imagenes bd/seguridad " . $id . ".jpg";
-
-                // Comprueba si el archivo de imagen existe
-                if (!file_exists($imagen)) {
-                    // Si no existe, se usa una imagen de respaldo
-                    $imagen = "img/numero-1.jpg";
-                }
-                ?>
+        <div class="art">
+            <!-- Comienza un bucle para recorrer el arreglo $resultado3 -->
+            <?php foreach ($resultado3 as $SEG) { ?>
+            
                 <!-- Contenedor para cada elemento de seguridad -->
                 <div class="product">
                     <!-- Muestra la imagen del implemento de seguridad -->
                     <td><img src="data:image/jpeg;base64,<?php echo base64_encode($SEG['Imagen']); ?>" class="imagen-seguridad"></td>
 
                     <!-- Muestra el tipo de implemento de seguridad -->
-                    <h3><?php echo $SEG['Tipo_Implemento']; ?></h3>
+                    <h4><?php echo $SEG['Tipo_Implemento']; ?></h4>
                     <div class="car">
                          <button onclick="agregarAlCarro('implemento', '<?php echo $SEG['Tipo_Implemento']; ?>', '<?php echo $SEG['ID_Implemento']; ?>', <?php echo $SEG['Precio']; ?>)">Añadir al carro</button>
                     </div> <!-- Botón para añadir al carro -->
@@ -233,21 +221,23 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <p>Precio: $<?php echo $SEG['Precio']; ?></p>
                     <br>
                 </div>
-            </div>
-        <?php } // Fin del bucle ?>
+            
+            <?php } // Fin del bucle ?>
+        </div>
     </div>
 
     <div id="Maquinas">
         <br>
         <h2 class="venta">MAQUINARIA:</h2><br>
-        <?php foreach ($resultado2 as $MAQ) { ?>
-            <div class="art">
+        <div class="art">
+            <?php foreach ($resultado2 as $MAQ) { ?>
+            
                 <?php
                 $id = $MAQ['ID_Maquinaria'];
                 ?>
 
                 <div class="product">
-                <td><img src="data:image/jpeg;base64,<?php echo base64_encode($MAQ['Imagen']); ?>" class="imagen-suplemento"></td>
+                    <td><img src="data:image/jpeg;base64,<?php echo base64_encode($MAQ['Imagen']); ?>" class="imagen-suplemento"></td>
                     <h3><?php echo $MAQ['Tipo_Maquinaria']; ?></h3>
                     <p>Modelo: <?php echo $MAQ['Modelo']; ?></p>
                     <div class="car">
@@ -257,34 +247,34 @@ $resultado3 = $sql->fetchAll(PDO::FETCH_ASSOC);
 
                     <p>Precio: $<?php echo $MAQ['Precio']; ?></p>
                 </div>
-            </div>
-        <?php } ?>
+                <?php } ?>
+        </div>
     </div>
 
     <div id="suplementos">
         <br>
         <h2 class="venta">SUPLEMENTOS:</h2><br>
-        <?php foreach ($resultado1 as $SUP) { ?>
-            <div class="art">
-                <?php
-                $id = $SUP['ID_Suplemento'];
-                $imagen = "img/imagenes bd/suplemento " . $id . ".jpg";
-                if (!file_exists($imagen)) {
-                    $imagen = "img/numero-1.jpg";
-                }
-                ?>
-
-                <div class="product">
-                    <td><img src="data:image/jpeg;base64,<?php echo base64_encode($SUP['Imagen']); ?>" class="imagen-suplementos"></td>
-                    <h3><?php echo $SUP['Nombre_Suple']; ?></h3>
-                    <div class="car">
+        <div class="art">
+            <?php foreach ($resultado1 as $SUP) { ?>
+            <?php
+            $id = $SUP['ID_Suplemento'];
+            $imagen = "img/imagenes bd/suplemento " . $id . ".jpg";
+            if (!file_exists($imagen)) {
+                $imagen = "img/numero-1.jpg";
+            }
+            ?>
+            
+            <div class="product">
+                <td><img src="data:image/jpeg;base64,<?php echo base64_encode($SUP['Imagen']); ?>" class="imagen-suplementos"></td>
+                <h3><?php echo $SUP['Nombre_Suple']; ?></h3>
+                <div class="car">
                     <button onclick="agregarAlCarro('suplementos', '<?php echo $SUP['Nombre_Suple']; ?>', '<?php echo $SUP['ID_Suplemento']; ?>', <?php echo $SUP['Precio']; ?>)">Añadir al carro</button>
                     </div>
                     <br>
                     <p>Precio: $<?php echo $SUP['Precio']; ?></p><br>
                 </div>
-            </div>
-        <?php } ?>
+                <?php } ?>
+        </div>
     </div>
     <script type="text/javascript">
         function agregarAlCarro(nombreTabla, nombreProducto, idProducto, precio) {
