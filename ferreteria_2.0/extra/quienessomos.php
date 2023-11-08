@@ -90,7 +90,7 @@ include('sesiones.php');
         <img alt="Cambiar imagen" height="200"
         onmouseout= "SacaImagen2(this)"
         onmouseover="MeteImagen2(this)"
-        src="img/numero-1.jpg" id="vacio2" />
+        src="img/equipo/Debora1.jpg" id="vacio2" />
         <h4>Débora Camila Vizama Infante</h4>
         <h5>
             <li>Representante de local, encargado de compra y jefe de caja.</li>

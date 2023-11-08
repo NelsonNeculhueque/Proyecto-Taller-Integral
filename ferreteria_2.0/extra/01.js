@@ -128,7 +128,7 @@ function MeteImagen2(img) {
     var imagen = document.getElementById(img.id);
 
     // Cambia la imagen
-    imagen.src = "img/numero-2.jpg";
+    imagen.src = "img/equipo/Debora2.jpg";
 }
 
 function SacaImagen2(img) {
@@ -136,7 +136,7 @@ function SacaImagen2(img) {
     var imagen = document.getElementById(img.id);
 
     // Cambia la imagen
-    imagen.src = "img/numero-1.jpg";
+    imagen.src = "img/equipo/Debora1.jpg";
 }
 
 function MeteImagen3(img) {
