@@ -1,7 +1,8 @@
 <?php
+
+
 include('sesiones.php');
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -55,6 +56,14 @@ include('sesiones.php');
     <main>
         <div class="container">
             <h2>Contacto</h2>
+
+            <?php
+            if (isset($_SESSION['exito']) && $_SESSION['exito']) {
+                echo "<div class='exito-msg'>El formulario se ha enviado exitosamente.</div>";
+                unset($_SESSION['exito']);
+            }
+            ?>
+
             <form action="bsd.php" method="post">
                 <div class="form-group">
                     <label for="rut">Rut:</label>
@@ -96,18 +105,10 @@ include('sesiones.php');
             </form>
 
         </div>
-        <script>
-            const botoncito = document.querySelector("button");
-            botoncito.addEventListener("click", (event) => {
-                alert("Mensaje mandado con exito")
-                event.preventDefault()
-            })
-        </script>
+
     </main>
 
-
     <footer>
-        <!-- Añadimos un pie de página con la etiqueta <footer> -->
         <p>Ferretería Bertuzzi SPA - Todos los derechos reservados © 2023</p>
     </footer>
     
